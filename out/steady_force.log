@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  20 DEC 2022 08:29
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  20 DEC 2022 08:48
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1262,17 +1262,20 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 51.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 51.
-[2] [3] (out/steady_force.aux)
+[2]
+File: ./pic//gradB.png Graphic file (type bmp)
+<./pic//gradB.png>
+[3] [4] (out/steady_force.aux)
 Package rerunfilecheck Info: File `steady_force.out' has not changed.
 (rerunfilecheck)             Checksum: 2F676F55EEBC04452169BB689565B992;1542.
  ) 
 Here is how much of TeX's memory you used:
- 38130 strings out of 475422
- 773979 string characters out of 5788032
- 1316835 words of memory out of 5000000
- 59296 multiletter control sequences out of 15000+600000
+ 38149 strings out of 475422
+ 774287 string characters out of 5788032
+ 1311837 words of memory out of 5000000
+ 59310 multiletter control sequences out of 15000+600000
  522605 words of font info for 136 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 89i,13n,83p,480b,1248s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,83p,480b,1260s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/steady_force.dvi (3 pages, 21164 bytes).
+Output written on out/steady_force.dvi (4 pages, 21832 bytes).

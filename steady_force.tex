@@ -49,13 +49,13 @@
 \end{equation}
 と求まる。つまり、定常的な外力が加わっている方向には運動しない。
 \subsection{定常的な電場が印加されているとき}
-定常的な電場$\bm{E}$が印加されている場合には、ドリフト運動は電荷に依らないことがわかる。式\eqref{eq:drift}によると、
+例として定常的な電場$\bm{E}$が印加されている場合には、ドリフト運動は電荷に依らないことがわかる。
+式\eqref{eq:drift}によると、
 \begin{equation}
 	\bm{v}_{\bm{E}} = \frac{\bm{E}\cross\bm{B}}{B^2}
 \end{equation}
 となるため、プラズマ中の電子とイオンは同じ速度で同じ方向にドリフトする。そのため、プラズマ中に電離が生じることがなく、電流は流れない。
 また、プラズマ全体は磁力線を横切ってドリフトしていくことがわかる。
-
 
 \newpage
 \section{空間的に変化する定常磁場}
@@ -67,6 +67,12 @@
 		0 & 0 & B(y)
 	\end{pmatrix}^\top\;。
 \end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{gradB.png}
+	\caption{磁場と垂直な方向に勾配が生じている場合}
+	\label{fig:gradB}
+\end{figure}
 また、$B(y)$は緩やかに変化しているとする。すなわち、回転中心におけるTaylor展開の1次項までで近似できるとする：
 \begin{equation}
 	B(y) = B_0 + \qty(\pdv{B}{y})_0y = B_0 + \qty(\pdv{B}{y})_0r_{\text{L}}\sin\theta\;。
