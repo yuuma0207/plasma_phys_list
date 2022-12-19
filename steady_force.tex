@@ -1,0 +1,59 @@
+\input{~/macro.tex}
+\title{定常的とみなせる外力が加わった際の荷電粒子の運動}
+\author{20B01392 松本侑真}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+	プラズマ物理学において、定常的な外力が加わった差異の荷電粒子の運動についてまとめる。
+	また、外力が時間的に変化している場合においても、粒子のサイクロトロン運動よりも十分にゆっくりであれば成立する。
+\end{abstract}
+\tableofcontents
+\newpage
+
+\section{一様定常磁場と定常的な外力}
+荷電粒子に対して一様定常磁場$\bm{B}$と定常的な外力$\bm{F}(\bm{x})$が印加している場合を考える。
+まずは、粒子の速度ベクトルを磁場$\bm{B}$に垂直な方向と平行な方向へと分解する：
+\begin{equation}
+	\bm{v} = \bm{v}_{\perp} + \bm{v}_{\parallel}\;。
+\end{equation}
+外力の磁場に平行な成分については、大きさが$\bm{F}_{\parallel}/m$の等加速度直線運動を与えるだけである。
+そのため、以下では磁場$\bm{B}$と垂直な成分のみを考える($\bm{F} = \bm{F}_{\perp}$)。このとき、磁場に垂直な方向における荷電粒子の運動方程式は
+\begin{equation}
+	m\dot{\bm{v}}_{\perp} = q\qty(\bm{v}_{\perp}\cross\bm{B}) + \bm{F}_{\perp}
+	\label{eq:mv_all}
+\end{equation}
+となる。外力が加わっていない場合、磁場$\bm{B}$に垂直な方向において荷電粒子は円運動を行うことが直ちにわかる。そのため、$\bm{v}_{\perp}$を$\bm{v}_0$（円運動成分）と$\bm{v}_{\text{F}}$（ドリフト運動成分）に分解して考える。
+\footnote{ローレンツ力と外力が張る平面が磁場と垂直であるため、$\bm{v}_{\parallel}$方向に$\bm{v}_{\text{F}}$は存在しない。}
+このとき、円運動成分については以下の運動方程式が成立している：
+\begin{equation}
+	m\dot{\bm{v}}_0 = q\qty(\bm{v}_0\cross\bm{B})\;。
+\end{equation}
+定常的な外力が印加されていることから、$\bm{v}_{\text{F}}$の時間変化がないと考えて良い\footnote{円運動について平均を取ると直流成分のみが残り、それが$\bm{v}_{\text{F}}$となるはずだから、時間変化はないと考えて良い。}ため、
+式\eqref{eq:mv_all}は
+\begin{equation}
+	m\dot{\bm{v}}_0 = q\qty(\bm{v}_0\cross\bm{B}) + q\qty(\bm{v}_{\text{F}}\cross\bm{B}) + \bm{F}_{\perp}
+\end{equation}
+と書き直すことができる。したがって、
+\begin{equation}
+	q\qty(\bm{v}_{\text{F}}\cross\bm{B}) + \bm{F}_{\perp} = \bm{0}
+\end{equation}
+が成立している。右から$\bm{B}$の外積を取ってみると、$(\bm{a}\cross \bm{b})\cross \bm{c} = (\bm{a}\cdot \bm{c})\bm{b} - (\bm{b}\cdot \bm{c})\bm{a}$を用いて、
+\begin{equation}
+	q\qty(\bm{v}_{\text{F}}\cross\bm{B})\cross\bm{B} = -qB^2\bm{v}_{\text{F}} = -\bm{F}_{\perp}\cross\bm{B}
+\end{equation}
+となる。したがって、ドリフト運動$\bm{v}_{\text{F}}$は
+\begin{equation}
+	\bm{v}_{\text{F}} = \frac{\bm{F}_{\perp}\cross\bm{B}}{qB^2} = \frac{\bm{F}\cross\bm{B}}{qB^2}
+\end{equation}
+と求まる。つまり、定常的な外力が加わっている方向には運動しない。
+
+\newpage
+\section{空間的に変化する定常磁場}
+
+
+\section{一様定常磁場と時間的に緩やかに変化する一様電場}
+\section{一様定常磁場と時間的に定常で緩やかに空間変化する電場}
+
+
+\end{document}
