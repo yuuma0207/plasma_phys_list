@@ -1,4 +1,10 @@
 \input{~/macro.tex}
+\newcommand{\varParallel}{\def\@varParallel{/\kern-.2em /}%
+  \mathchoice%
+  {\@varParallel}%
+  {\textstyle\@varParallel}%
+  {\scriptscriptstyle\@varParallel}%
+  {\scriptscriptstyle\@varParallel}}
 \title{定常的とみなせる外力が加わった際の荷電粒子の運動}
 \author{20B01392 松本侑真}
 \date{\today}
@@ -15,16 +21,16 @@
 荷電粒子に対して一様定常磁場$\bm{B}$と定常的な外力$\bm{F}(\bm{x})$が印加している場合を考える。
 まずは、粒子の速度ベクトルを磁場$\bm{B}$に垂直な方向と平行な方向へと分解する：
 \begin{equation}
-	\bm{v} = \bm{v}_{\perp} + \bm{v}_{\parallel}\;。
+	\bm{v} = \bm{v}_{\perp} + \bm{v}_{\varParallel}\;。
 \end{equation}
-外力の磁場に平行な成分については、大きさが$\bm{F}_{\parallel}/m$の等加速度直線運動を与えるだけである。
+外力の磁場に平行な成分については、大きさが$\bm{F}_{\varParallel}/m$の等加速度直線運動を与えるだけである。
 そのため、以下では磁場$\bm{B}$と垂直な成分のみを考える($\bm{F} = \bm{F}_{\perp}$)。このとき、磁場に垂直な方向における荷電粒子の運動方程式は
 \begin{equation}
 	m\dot{\bm{v}}_{\perp} = q\qty(\bm{v}_{\perp}\cross\bm{B}) + \bm{F}_{\perp}
 	\label{eq:mv_all}
 \end{equation}
 となる。外力が加わっていない場合、磁場$\bm{B}$に垂直な方向において荷電粒子は円運動を行うことが直ちにわかる。そのため、$\bm{v}_{\perp}$を$\bm{v}_0$（円運動成分）と$\bm{v}_{\text{F}}$（ドリフト運動成分）に分解して考える。
-\footnote{ローレンツ力と外力が張る平面が磁場と垂直であるため、$\bm{v}_{\parallel}$方向に$\bm{v}_{\text{F}}$は存在しない。}
+\footnote{ローレンツ力と外力が張る平面が磁場と垂直であるため、$\bm{v}_{\varParallel}$方向に$\bm{v}_{\text{F}}$は存在しない。}
 このとき、円運動成分については以下の運動方程式が成立している：
 \begin{equation}
 	m\dot{\bm{v}}_0 = q\qty(\bm{v}_0\cross\bm{B})\;。
@@ -120,12 +126,12 @@
 磁場の曲率半径を$R_\text{c}$として、曲率中心から荷電粒子の位置へ伸びるベクトルを$\bm{R}_{\text{c}}$とする。
 このとき、荷電粒子にかかる遠心力$\bm{F}_{cf}$は
 \begin{equation}
-	\bm{F}_{cf} = \frac{m\bm{v}^2_{\parallel}}{R_{\text{c}}}\frac{\bm{R}_{\text{c}}}{R_{\text{c}}}
+	\bm{F}_{cf} = \frac{m\bm{v}^2_{\varParallel}}{R_{\text{c}}}\frac{\bm{R}_{\text{c}}}{R_{\text{c}}}
 \end{equation}
-となる。ただし、$\bm{v}_{\parallel}$は磁力線と平行な方向の荷電粒子の速度ベクトルである。
+となる。ただし、$\bm{v}_{\varParallel}$は磁力線と平行な方向の荷電粒子の速度ベクトルである。
 したがって、湾曲磁場によって速度
 \begin{equation}
-	\bm{v}_{R} = \frac{\bm{F}_{cf}\cross\bm{B}}{qB^2} = \frac{mv^2_{\parallel}}{q}\frac{\bm{R}_{\text{c}}\cross\bm{B}}{R_{\text{c}}^2B^2}
+	\bm{v}_{R} = \frac{\bm{F}_{cf}\cross\bm{B}}{qB^2} = \frac{mv^2_{\varParallel}}{q}\frac{\bm{R}_{\text{c}}\cross\bm{B}}{R_{\text{c}}^2B^2}
 \end{equation}
 のドリフト運動が生じることがわかる。このドリフトは湾曲ドリフトや遠心力ドリフトと呼ばれる。
 さらに、湾曲ドリフトが生じていれば必ずgradBドリフトが存在することがわかる。
@@ -146,12 +152,16 @@
 \end{equation}
 が生じる。以上より、湾曲磁場が存在している場合に生じるドリフト速度$\bm{v}_{D}$は
 \begin{equation}
-	\bm{v}_{D} = \bm{v}_{R} + \bm{v}_{B} = \frac{m}{q}\frac{\bm{R}_{\text{c}}\cross\bm{B}}{R_{\text{c}}^2B^2}\qty(v^2_{\parallel} + \frac{1}{2}v^2_{\perp})
+	\bm{v}_{D} = \bm{v}_{R} + \bm{v}_{B} = \frac{m}{q}\frac{\bm{R}_{\text{c}}\cross\bm{B}}{R_{\text{c}}^2B^2}\qty(v^2_{\varParallel} + \frac{1}{2}v^2_{\perp})
 \end{equation}
 となる。このようなドリフトが加わるのは望ましいことではない。
 なぜなら、熱核融合プラズマを閉じ込める目的で磁場をトーラス状に曲げた際に、粒子はトーラスの外部にドリフトしてしまうからである。
 
 \subsection{磁場と平行な方向に勾配が生じている場合}
+磁場と平行な方向に勾配が生じている場合について考える。
+磁場に垂直な方向に勾配が生じている場合は、磁場の方向と垂直な方向へドリフトすることがわかったが、平行な勾配に関してはどうであろうか。
+結論から述べると、ドリフト運動は生じない。これは、$\grad{B}\varParallel \bm{B}$が成立しているため、
+$\bm{F}\cross\bm{B} = \bm{0}$となることからわかる。しかし、実際に$\bm{F}$の表式を計算してみると面白い結果が得られることを以下で示す。
 
 \section{一様定常磁場と時間的に緩やかに変化する一様電場}
 \section{一様定常磁場と時間的に定常で緩やかに空間変化する電場}
