@@ -1,10 +1,4 @@
 \input{~/macro.tex}
-\newcommand{\varParallel}{\def\@varParallel{/\kern-.2em /}%
-  \mathchoice%
-  {\@varParallel}%
-  {\textstyle\@varParallel}%
-  {\scriptscriptstyle\@varParallel}%
-  {\scriptscriptstyle\@varParallel}}
 \title{定常的とみなせる外力が加わった際の荷電粒子の運動}
 \author{20B01392 松本侑真}
 \date{\today}
@@ -163,13 +157,38 @@
 結論から述べると、ドリフト運動は生じない。これは、$\grad{B}\varParallel \bm{B}$が成立しているため、
 $\bm{F}\cross\bm{B} = \bm{0}$となることからわかる。しかし、実際に$\bm{F}$の表式を計算してみると面白い結果が得られることを示す。
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{parallel_B.png}
+	\caption{磁場と平行な方向に勾配が生じている場合}
+	\label{fig:parallel_B}
+\end{figure}
+図\ref{fig:parallel_B}のように、磁場のだいたいの向きが$z$方向であり、磁場の強さの変化が$z$方向であるとする。このとき、必然的に磁場の収束・発散により$r$方向にも磁場は存在する。
+軸対称性を課すことによって$\theta$方向の磁場は存在しない。
 ここでは、Maxwell方程式$\div{\bm{B}} = 0$に着目する。円筒座標系で書き下してみると、
 \begin{equation}
-	\frac{1}{r}\pdv{r}\qty(rB_r) + \frac{1}{r}\pdv{B_\theta}{\theta} + \pdv{B_z}{z} = 0
+	\frac{1}{r}\pdv{r}\qty(rB_r) + \frac{1}{r}\pdv{B_\theta}{\theta} + \pdv{B_z}{z} = 0 \quad\Longrightarrow\quad \pdv{B_r}{r} + \frac{B_r}{r} + \pdv{B_z}{z} = 0
+	\label{eq:divB=0}
 \end{equation}
+となる。$B_r(0) = 0$とすると、$\qty(\pdv*{B_r}{r})_{r\to 0} = \qty(B_r/r)_{r\to 0}$が成立するため、
+式\eqref{eq:divB=0}を$B_r$について解くと、$r_{\text{L}}$が十分に小さいときは
+\begin{equation}
+	B_r(r_{\text{L}}) = -\frac{r_{\text{L}}}{2}\qty(\pdv{B_z}{z})_{r\to 0}
+\end{equation}
+となる。ここで、旋回中の平均Lorentz力を考えると、$r$方向は$0$となるが、$\bm{B}$と平行な方向の力$F_{\varParallel}$は
+\begin{equation}
+	F_{\varParallel} = qv_{\perp}B_r(r_{\text{L}})
+\end{equation}
+となる。したがって、外力$\bm{F} = F_{\varParallel}\bm{e}_z$が荷電粒子にかかる。$r_{\text{L}} = mv_{\perp}/(qB_z)$であることより、
+\begin{equation}
+	F_{\varParallel} = -\frac{mv^2_{\perp}/2}{B_z}\qty(\pdv{B_z}{z})_{r\to 0}\bm{e}_z = -\mu_{\varParallel}\qty(\grad{B})_{\varParallel}
+\end{equation}
+と計算できる。すなわち、ドリフト運動は生じないが、磁場が弱くなる方向へ荷電粒子が押し出されることがわかる。
+
+
+
 
 \section{一様定常磁場と時間的に緩やかに変化する一様電場}
 \section{一様定常磁場と時間的に定常で緩やかに空間変化する電場}
-
 
 \end{document}
