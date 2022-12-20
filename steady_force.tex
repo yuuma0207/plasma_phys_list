@@ -73,7 +73,17 @@
 	\caption{磁場と垂直な方向に勾配が生じている場合}
 	\label{fig:gradB}
 \end{figure}
-また、$B(y)$は緩やかに変化しているとする。すなわち、回転中心におけるTaylor展開の1次項までで近似できるとする：
+また、$B(y)$は緩やかに変化しているとする。
+\footnote{
+	緩やかさを表す指標としては、特性長$L$という概念を考えれば良い。
+	これは、ある物理量の変化が物理量自体に影響を及ぼすのに必要な距離の目安であり、今の状況であれば
+	\begin{equation}
+		L \coloneqq B_0/(\partial_yB_0)
+	\end{equation}
+	である。円運動の半径が急激に変化しない場合を考えたいため、
+	$L\gg r_{\text{L}}$が成立しているとき、$B(y)$は緩やかに変かしていると言える。
+}
+すなわち、回転中心におけるTaylor展開の1次項までで近似できるとする：
 \begin{equation}
 	B(y) = B_0 + \qty(\pdv{B}{y})_0y = B_0 + \qty(\pdv{B}{y})_0r_{\text{L}}\sin\theta\;。
 \end{equation}
@@ -106,6 +116,40 @@
 \end{equation}
 となる。これをgradBドリフトと呼ぶ。
 \subsection{湾曲磁場について}
+次に、磁場が湾曲している場合について考える。荷電粒子は磁力線の周りをらせん運動するため、磁場が湾曲している場合は遠心力が生じることがわかる。
+磁場の曲率半径を$R_\text{c}$として、曲率中心から荷電粒子の位置へ伸びるベクトルを$\bm{R}_{\text{c}}$とする。
+このとき、荷電粒子にかかる遠心力$\bm{F}_{cf}$は
+\begin{equation}
+	\bm{F}_{cf} = \frac{m\bm{v}^2_{\parallel}}{R_{\text{c}}}\frac{\bm{R}_{\text{c}}}{R_{\text{c}}}
+\end{equation}
+となる。ただし、$\bm{v}_{\parallel}$は磁力線と平行な方向の荷電粒子の速度ベクトルである。
+したがって、湾曲磁場によって速度
+\begin{equation}
+	\bm{v}_{R} = \frac{\bm{F}_{cf}\cross\bm{B}}{qB^2} = \frac{mv^2_{\parallel}}{q}\frac{\bm{R}_{\text{c}}\cross\bm{B}}{R_{\text{c}}^2B^2}
+\end{equation}
+のドリフト運動が生じることがわかる。このドリフトは湾曲ドリフトや遠心力ドリフトと呼ばれる。
+さらに、湾曲ドリフトが生じていれば必ずgradBドリフトが存在することがわかる。
+磁場が湾曲している場合、局所的には円形に湾曲していると考えられる。
+ここで、外部電場と外部電流が存在しないことから、$\curl{\bm{B}} = \bm{0}$が成立していることに着目する。
+円筒座標系で書き下すと$\bm{B}$が$\theta$成分しか持たないことと、$\bm{B}$は$r$方向にしか変化しないことに注意すると、
+\begin{equation}
+	\curl{\bm{B}} = \frac{1}{r}\pdv{r}\qty(rB_{\theta})\bm{e}_z = 0\qquad\therefore B_\theta \propto \frac{1}{r}
+\end{equation}
+が成立する。すなわち、曲率半径$R_{\text{c}}$の近傍では
+\begin{equation}
+	\qty(\grad{B})_{\perp} = \grad{B} \propto -\frac{\bm{e}_r}{R_{c}^2},\quad\frac{\grad{B}}{B} = -\frac{\bm{R}_{\text{c}}}{R_{\text{c}}^2}
+\end{equation}
+となる。したがって、gradBドリフトは
+\begin{equation}
+	\bm{v}_{B} = -\frac{mv^2_{\perp}}{2B}\frac{\grad{B}\cross\bm{B}}{qB^2}
+	= \frac{mv^2_{\perp}/2}{q}\frac{\bm{R}_{\text{c}}\cross\bm{B}}{R_{\text{c}}^2B^2}
+\end{equation}
+が生じる。以上より、湾曲磁場が存在している場合に生じるドリフト速度$\bm{v}_{D}$は
+\begin{equation}
+	\bm{v}_{D} = \bm{v}_{R} + \bm{v}_{B} = \frac{m}{q}\frac{\bm{R}_{\text{c}}\cross\bm{B}}{R_{\text{c}}^2B^2}\qty(v^2_{\parallel} + \frac{1}{2}v^2_{\perp})
+\end{equation}
+となる。このようなドリフトが加わるのは望ましいことではない。
+なぜなら、熱核融合プラズマを閉じ込める目的で磁場をトーラス状に曲げた際に、粒子はトーラスの外部にドリフトしてしまうからである。
 
 \subsection{磁場と平行な方向に勾配が生じている場合}
 
