@@ -230,6 +230,33 @@ $\bm{F}\cross\bm{B} = \bm{0}$となることからわかる。しかし、実際
 	\caption{磁気ミラーによるプラズマ閉じ込めのセットアップ}
 	\label{fig:mirror}
 \end{figure}
+図\ref{fig:mirror}のようなセットアップを考える。$z$軸方向に一様な外部磁場が印加されており、$z=\pm z_m$に円形コイルが置かれている。
+円形コイルによって磁場が湾曲されるため、磁束密度の大きさは$z=z_m$で最大値$B_{\text{max}}$を取り、$z=0$で最小値$B_{\text{min}}$を取る。
+$z=0$に存在する荷電粒子が$z$軸からの角度$\varphi$で初速度速度$\bm{v} = \bm{v}_{\varParallel} + \bm{v}_{\perp}$を持って運動するとする。
+磁場は$z$軸に対する回転対称性により、その勾配は磁場に平行な方向にのみ存在することに注意する($B = B(z)$)。
+このとき、粒子が$z=z_m$においても反射されない臨界角度$\varphi_c$が存在することを示す。
+
+そもそも粒子が$z=z_m$で反射される場合、反射点での粒子速度は$\bm{v}_{\varParallel} = \bm{0},\,\bm{v}_{\perp} = \bm{v}$にならないといけない。
+そのため、$z=0,\,z_m$における運動エネルギー保存則により、
+\begin{equation}
+	\frac{1}{2}m\qty( v_{\varParallel}^2 + v^2_{\perp}) = \frac{1}{2}mv^2
+\end{equation}
+が成立する。さらに、磁気モーメントが断熱不変量となっているため、$z=0,\,z_m$における磁気モーメントが等しいことから
+\begin{equation}
+	\frac{m\qty(v\sin\varphi_c)^2}{2B_{\text{min}}} = \frac{mv^2}{2B_{\text{max}}}
+\end{equation}
+が成立する。すなわち、臨界角$\varphi_c$は
+\begin{equation}
+	\sin^2\varphi_c = \frac{B_{\text{min}}}{B_{\text{max}}}
+\end{equation}
+と求められる。仮に粒子が反射されない場合、$z=z_m$における粒子の速度は$\bm{v}_{\perp} < \bm{v}$が成立している。したがって、このときの射出角度を$\varphi$とおくと
+\begin{equation}
+	\sin^2\varphi < \frac{B_{\text{min}}}{B_{\text{max}}} = \sin^2\varphi_c
+\end{equation}
+が成立する。したがって、臨界角度以下で射出された荷電粒子は$\abs{z} \leq z_m$に閉じ込めることができない。
+\footnote{$\varphi = \SI{90}{\degree}$の場合を考えると明らかに荷電粒子は$z=0$上を運動するため、閉じ込め可能な射出角度の不等号の向きを間違えることはない。}
+また、このときの磁場の強さの比$B_{\text{min}}/B_{\text{max}}$をミラー比と呼ぶ。
+
 
 \section{一様定常磁場と時間的に緩やかに変化する一様電場}
 
