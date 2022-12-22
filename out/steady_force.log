@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  20 DEC 2022 13:20
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  22 DEC 2022 22:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1084,36 +1084,36 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ))
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 5.
+h' as default language. on input line 7.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 5.
+(Font)              scaled to size 9.24683pt on input line 7.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 5.
+(Font)              scaled to size 9.24683pt on input line 7.
 (out/steady_force.aux)
 \openout1 = `steady_force.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
@@ -1158,7 +1158,7 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 
-Package chemgreek Info: Activating mapping `default' on line 5.
+Package chemgreek Info: Activating mapping `default' on line 7.
 
 
 Package siunitx Warning: Detected the "physics" package:
@@ -1178,8 +1178,8 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 5.
-Package hyperref Info: Link coloring ON on input line 5.
+or `english'. on input line 7.
+Package hyperref Info: Link coloring ON on input line 7.
 (out/steady_force.out) (out/steady_force.out)
 \@outlinefile=\write4
 \openout4 = `steady_force.out'.
@@ -1187,51 +1187,51 @@ Package hyperref Info: Link coloring ON on input line 5.
 \c@lstlisting=\count404
 \docmute@nestinglevel=\count405
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 7.
+(Font)              scaled to size 15.9785pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 7.
+(Font)              scaled to size 15.9785pt on input line 9.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 7.
+(Font)              scaled to size 11.09619pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 7.
+(Font)              scaled to size 11.09619pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 7.
+(Font)              scaled to size 7.39746pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 7.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+(Font)              scaled to size 5.5481pt on input line 9.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 7.
+(Font)              scaled to size 11.09619pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 7.
+(Font)              scaled to size 7.39746pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 7.
+(Font)              scaled to size 5.5481pt on input line 9.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 7.
+(Font)              scaled to size 8.32214pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 7.
+(Font)              scaled to size 8.32214pt on input line 9.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 7.
+(Font)              scaled to size 8.32214pt on input line 9.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 7.
+(Font)              scaled to size 8.32214pt on input line 9.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 11.
+(Font)              scaled to size 9.24683pt on input line 13.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 11.
+(Font)              scaled to size 9.24683pt on input line 13.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 11.
+(Font)              scaled to size 13.31541pt on input line 13.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 11.
+(Font)              scaled to size 13.31541pt on input line 13.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 11.
+(Font)              scaled to size 13.31541pt on input line 13.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 11.
+(Font)              scaled to size 13.31541pt on input line 13.
 (out/steady_force.toc
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 2.
@@ -1251,34 +1251,37 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 26.
+(Font)              scaled to size 6.47278pt on input line 28.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 26.
+(Font)              scaled to size 4.62341pt on input line 28.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 27.
+(Font)              scaled to size 7.39746pt on input line 29.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 27.
+(Font)              scaled to size 5.5481pt on input line 29.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 51.
+(Font)              scaled to size 11.09619pt on input line 61.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 51.
+(Font)              scaled to size 11.09619pt on input line 61.
 [2]
 File: ./pic//gradB.png Graphic file (type bmp)
 <./pic//gradB.png>
 [3] [4]
 File: ./pic//parallel_B.png Graphic file (type bmp)
 <./pic//parallel_B.png>
-[5] [6] (out/steady_force.aux)
+[5]
+File: ./pic//mirror.png Graphic file (type bmp)
+<./pic//mirror.png>
+[6] [7] (out/steady_force.aux)
 Package rerunfilecheck Info: File `steady_force.out' has not changed.
-(rerunfilecheck)             Checksum: 2F676F55EEBC04452169BB689565B992;1542.
+(rerunfilecheck)             Checksum: B56D74597748FB2F2222126A691DCB01;1719.
  ) 
 Here is how much of TeX's memory you used:
- 38159 strings out of 475422
- 774488 string characters out of 5788032
+ 38168 strings out of 475422
+ 774650 string characters out of 5788032
  1318924 words of memory out of 5000000
- 59319 multiletter control sequences out of 15000+600000
+ 59327 multiletter control sequences out of 15000+600000
  522605 words of font info for 136 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  89i,13n,83p,480b,1257s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/steady_force.dvi (6 pages, 33076 bytes).
+Output written on out/steady_force.dvi (7 pages, 39088 bytes).

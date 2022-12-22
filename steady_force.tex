@@ -1,6 +1,8 @@
 \input{~/macro.tex}
-\title{定常的とみなせる外力が加わった際の荷電粒子の運動}
-\author{20B01392 松本侑真}
+\title{%定常的とみなせる外力が加わった際の荷電粒子の運動
+}
+\author{%20B01392 松本侑真
+}
 \date{\today}
 \begin{document}
 \maketitle
@@ -29,7 +31,15 @@
 \begin{equation}
 	m\dot{\bm{v}}_0 = q\qty(\bm{v}_0\cross\bm{B})\;。
 \end{equation}
-定常的な外力が印加されていることから、$\bm{v}_{\text{F}}$の時間変化がないと考えて良い\footnote{円運動について平均を取ると直流成分のみが残り、それが$\bm{v}_{\text{F}}$となるはずだから、時間変化はないと考えて良い。}ため、
+定常的な外力が印加されていることから、$\bm{v}_{\text{F}}$の時間変化がないと考えて良い
+\footnote{円運動について平均を取ると直流成分のみが残り、それが$\bm{v}_{\text{F}}$となるはずだから時間変化はないと考えて良い。
+
+\noindent
+より正確には、円運動の周波数$\omega_{\text{c}}$より緩やかに時間変化をする場合であれば適用できる：
+\begin{equation}
+	\omega_{\text{c}} \gg \qty|\pdv{\bm{F}_{\perp}}{t}\bigg/\bm{F}_{\perp}|\;。
+\end{equation}
+}ため、
 式\eqref{eq:mv_all}は
 \begin{equation}
 	m\dot{\bm{v}}_0 = q\qty(\bm{v}_0\cross\bm{B}) + q\qty(\bm{v}_{\text{F}}\cross\bm{B}) + \bm{F}_{\perp}
@@ -181,14 +191,50 @@ $\bm{F}\cross\bm{B} = \bm{0}$となることからわかる。しかし、実際
 \end{equation}
 となる。したがって、外力$\bm{F} = F_{\varParallel}\bm{e}_z$が荷電粒子にかかる。$r_{\text{L}} = mv_{\perp}/(qB_z)$であることより、
 \begin{equation}
-	F_{\varParallel} = -\frac{mv^2_{\perp}/2}{B_z}\qty(\pdv{B_z}{z})_{r\to 0}\bm{e}_z = -\mu_{\varParallel}\qty(\grad{B})_{\varParallel}
+	F_{\varParallel} = -\frac{mv^2_{\perp}/2}{B_z}\qty(\pdv{B_z}{z})_{r\to 0}\bm{e}_z = -\mu_{m}\qty(\grad{B})_{\varParallel}
 \end{equation}
 と計算できる。すなわち、ドリフト運動は生じないが、磁場が弱くなる方向へ荷電粒子が押し出されることがわかる。
 
+\subsection{断熱不変量とその応用例について}
+断熱不変量とは、サイクル運動の1周期あたりの物理量などの環境変化が小さいときに一定に保たれる量のことである。ここでは、磁場と平行な方向に勾配が生じている場合に磁気モーメント$\mu_m$が断熱不変量となることを示す。
+磁場方向の運動方程式は
+\begin{equation}
+	m\dv{\bm{v}_{\varParallel}}{t} = -\mu_m\grad B
+\end{equation}
+となるため、$\bm{v}_{\varParallel}$との内積を考えると次のように計算できる：
+\begin{equation}
+	\dv{t}\qty(\frac{1}{2}mv_{\varParallel}^2) = -\mu_m\bm{v}_{\varParallel}\cdot\grad B = -\mu_m\dv{B}{t}\;。
+	\label{eq:para_hozon}
+\end{equation}
+磁場は荷電粒子に仕事をしない\footnote{磁場の勾配が円運動に対して十分に緩やかであるため、荷電粒子にはローレンツ力のみが作用すると考えて良い。}ため、
+運動エネルギーが一定であることと、$\mu_m = mv_{\perp}^2/(2B)$を用いると、
+\begin{equation}
+	\dv{t}\qty(\frac{1}{2}mv_{\varParallel}^2) = -\dv{t}\qty(\frac{1}{2}mv_{\perp}^2) = -\dv{t}\qty(\mu_mB)
+\end{equation}
+となる。式\eqref{eq:para_hozon}を用いることで、
+\begin{equation}
+	\dv{\mu_m}{t} = 0
+\end{equation}
+を得る。したがって、磁気モーメント$\mu_m$は断熱不変量である。
 
+次に、磁気ミラーによるプラズマ閉じ込めが上手くいかないことを断熱不変量を用いて示す。
+熱運動によって荷電粒子が弱磁場領域から強磁場領域へ動いたとき、粒子は弱磁場方向へ押し戻される方向に力を受ける。
+そのため、荷電粒子の集合であるプラズマは磁気ミラーによって封じ込めることが可能と思われるが、実は完全に封じ込めることはできない。
 
+たとえば、$\bm{v}_{\perp} = 0$の場合には磁気モーメントが存在しないため、磁場に沿った方向に力を受けない。
+それだけではなく、有限な磁気モーメントを持った荷電粒子に対しても封じ込めが失敗する場合が存在する。
+どのような場合に封じ込めが失敗するかについて考察する。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{mirror.png}
+	\caption{磁気ミラーによるプラズマ閉じ込めのセットアップ}
+	\label{fig:mirror}
+\end{figure}
 
 \section{一様定常磁場と時間的に緩やかに変化する一様電場}
+
+
+
 \section{一様定常磁場と時間的に定常で緩やかに空間変化する電場}
 
 \end{document}
