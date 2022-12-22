@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  22 DEC 2022 22:49
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  22 DEC 2022 23:59
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1271,7 +1271,7 @@ File: ./pic//parallel_B.png Graphic file (type bmp)
 [5]
 File: ./pic//mirror.png Graphic file (type bmp)
 <./pic//mirror.png>
-[6] [7] (out/steady_force.aux)
+[6] [7] [8] (out/steady_force.aux)
 Package rerunfilecheck Info: File `steady_force.out' has not changed.
 (rerunfilecheck)             Checksum: B56D74597748FB2F2222126A691DCB01;1719.
  ) 
@@ -1284,4 +1284,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  89i,13n,83p,480b,1257s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/steady_force.dvi (7 pages, 43412 bytes).
+Output written on out/steady_force.dvi (8 pages, 52328 bytes).

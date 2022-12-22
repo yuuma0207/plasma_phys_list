@@ -257,11 +257,66 @@ $z=0$に存在する荷電粒子が$z$軸からの角度$\varphi$で初速度速
 \footnote{$\varphi = \SI{90}{\degree}$の場合を考えると明らかに荷電粒子は$z=0$上を運動するため、閉じ込め可能な射出角度の不等号の向きを間違えることはない。}
 また、このときの磁場の強さの比$B_{\text{min}}/B_{\text{max}}$をミラー比と呼ぶ。
 
-
 \section{一様定常磁場と時間的に緩やかに変化する一様電場}
+電場$\bm{E}$が時間的に定常な場合、ドリフト運動は$\bm{v}_E = E/B$であった。すなわち、イオンと電子はともに同じ速度でドリフトする。
+電場$\bm{E}$が時間的に緩やかな変化をする場合、ドリフト速度$\bm{v}_E$も変化するため、粒子には$-m\dot{\bm{v}}_E$の慣性力が作用する。
+したがって、新たな外力ドリフトが生じる。粒子の旋回の周波数よりも電場$\bm{E}$の各周波数が十分に小さな場合、$\bm{F}\cross{\bm{B}}$ドリフトの表式を用いることができるため、
+\begin{equation}
+	\dot{\bm{v}}_E = \frac{\dot{\bm{E}}\cross\bm{B}}{B^2}
+\end{equation}
+と表すことができる。したがって、慣性力によるドリフト速度$\bm{v}_\text{P}$は
+\begin{equation}
+	\bm{v}_\text{P} = \frac{-m\dot{\bm{v}}_E\cross\bm{B}}{qB^2} = -\frac{m}{qB^2}\frac{\dot{\bm{E}}\cross\bm{B}}{B^2}\cross\bm{B}
+	= \frac{m}{qB^2}\dv{\bm{E}}{t} = \pm\frac{1}{\omega_cB}\dv{\bm{E}}{t}
+\end{equation}
+と計算できる。このドリフトを分極ドリフトと呼ぶ。
+分極ドリフトの特徴としては、$\bm{E}$に平行で$q,\,m$に依存していることである。その結果、電流が誘起されてプラズマ内に分極電流が生じる。
 
-
-
+\newpage
 \section{一様定常磁場と時間的に定常で緩やかに空間変化する電場}
+最後に、一様定常な磁場と、時間的に定常ではあるが緩やかな空間変化をする電場の場合を考える。このとき、荷電粒子は1旋回する間は円運動を取ることを仮定する。
+電場$\bm{E}$が緩やかな空間変化をするということは、定常的な$\bm{E}\cross\bm{B}$ドリフトに補正（平均値からのずれ：perturbation）が現れると予想できる。
+簡単のために、電場は$x$軸方向に存在し、$y$方向に沿って緩やかな空間変化が生じているとする：
+\begin{equation}
+	\bm{E}(y) = E_0\cos(ky)\hat{\bm{x}}\;。
+\end{equation}
+荷電粒子の運動方程式
+\begin{equation}
+	m\dot{\bm{v}} = q\qty(\bm{v}\cross\bm{B} + \bm{E}(y))
+\end{equation}
+から、
+\begin{equation}
+	\begin{gathered}
+		\dot{v}_x = \pm\omega_cv_y + \frac{q}{m}E_x(y),\quad \dot{v}_y = \mp\omega_c^2v_x \\
+		\ddot{v}_x = -\omega_c^2v_x \pm\omega_c\frac{\dot{E}_x(y)}{B},\quad\ddot{v}_y = -\omega^2_cv_y -\omega_c^2\frac{E_x(y)}{B}
+	\end{gathered}
+\end{equation}
+となる。なお、$\pm$はイオン/電子に対応している。$x$軸方向の運動は単なるサイクロトロン運動になることがわかるため、以下では$y$軸方向の運動について考える。
+粒子の運動が円運動であることを仮定すると、回転中心を$y_0$として、$y = y_0 \pm r_{\text{L}}\sin{\omega_ct}$と表すことができる。したがって、
+\begin{equation}
+	\ddot{v}_y = -\omega_c^2v_y - \omega_c^2\frac{E_0}{B}\cos\qty[k\qty(y_0\pm r_{\text{L}}\sin{\omega_ct})]
+\end{equation}
+を得る。1旋回についての平均操作を取ることで、円運動成分（交流成分）を取り除いて電場の時間変化に起因する直流成分のみを取り出すことができる。
+$\ddot{v}_y$は振動項であるため、明らかに$\bar{\ddot{v}}_y = 0$である。したがって、
+\begin{equation}
+	\bar{\ddot{v}}_y = 0 = -\omega_c^2\bar{v}_y - \omega_c^2\frac{E_0}{B}\overline{\cos\qty[k\qty(y_0\pm r_{\text{L}}\sin{\omega_ct})]}
+\end{equation}
+を得る。
+\begin{equation}
+	\cos\qty[k\qty(y_0\pm r_{\text{L}}\sin{\omega_ct})]
+	= \cos(ky_0)\cos(kr_{\text{L}}\sin{\omega_ct}) \mp \sin(ky_0)\sin(kr_{\text{L}}\sin\omega_ct)
+\end{equation}
+であり、空間変化が緩やかであることに付随する条件$kr_{\text{L}} = 2\pi r_{\text{L}}/\lambda \ll 1\;(\lambda\text{は電場$\bm{E}$の波長})$を用いると、
+\begin{equation}
+	\cos\qty[k\qty(y_0\pm r_{\text{L}}\sin{\omega_ct})] \approx \cos(ky_0)\qty(1-\tfrac{1}{2}k^2r_{\text{L}}^2\sin^2{\omega_ct}) \mp \sin(ky_0)kr_{\text{L}}\sin{\omega_ct}
+\end{equation}
+とTaylor展開することができる。時間平均を取ると第二項は$0$になるため、
+\begin{equation}
+	\bar{v}_y = -\frac{E_0}{B}\cos(ky_0)\qty(1-\tfrac{1}{4}k^2r_{\text{L}}^2) = -\frac{E_x(y)}{B}\qty(1-\tfrac{1}{4}k^2r_{\text{L}}^2)
+\end{equation}
+となる。したがって、通常の$\bm{E}\cross\bm{B}$ドリフトは、電場の非一様性によって次のように修正される：
+\begin{equation}
+	\bm{v}_E = \frac{\bm{E}\cross\bm{B}}{B^2}\qty(1-\tfrac{1}{4}k^2r_{\text{L}}^2) = \qty(1 + \tfrac{1}{4}r_{\text{L}}^2\grad^2)\frac{\bm{E}\cross\bm{B}}{B^2}\;。
+\end{equation}
 
 \end{document}
