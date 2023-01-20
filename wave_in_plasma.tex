@@ -131,11 +131,46 @@ $x = x_0$が中心であり、体積$\varDelta x\varDelta y\varDelta z$の流体
 
 \subsection{流体プラズマを記述する方程式群}
 \subsubsection{運動方程式}
+\begin{equation}
+	mn\qty[\pdv{\bm{u}}{t} + \qty(\bm{u}\cdot\grad)\bm{u}] = qn\qty{\bm{E} + \bm{u}\cross\bm{B}} - \grad{P}
+\end{equation}
 \subsubsection{Maxwell方程式}
-\subsubsection{連続の式}
-\subsubsection{状態方程式}
+電荷密度$\sigma  = n_iq_i + n_eq_e$、電流密度$\bm{j} = n_iq_i\bm{v}_i + n_eq_e\bm{v}_e$とおける：
+\begin{align}
+	\div{\bm{E}}     & = 4\pi\qty(n_iq_i + n_eq_e)                                 \\
+	\curl{\bm{E}}    & = -\dot{\bm{B}}                                             \\
+	\div{\bm{B}}     & = 0                                                         \\
+	c^2\curl{\bm{B}} & = 4\pi\qty(n_iq_i\bm{v}_i + n_eq_e\bm{v}_e)  + \dot{\bm{E}}
+\end{align}
 
-\subsubsection{流体方程式のまとめ}
+\subsubsection{連続の式}
+体積$V$中の粒子の総数$N$は$V$を囲む表面$S$を横切る正味の粒子の流束がある場合にのみ変化する。粒子の流束密度は$n\bm{u}$であるため、Stokesの定理により、
+\begin{equation}
+	\pdv{N}{t} = \int_V\pdv{n}{t}dV = -\oint_S (n\bm{u})\cdot d\bm{S} = -\int_V \div\qty(n\bm{u})dV
+\end{equation}
+が任意の$V$で成立する。したがって、連続の式は以下のようになる：
+\begin{equation}
+	\pdv{n}{t} + \div{(n\bm{u})} = 0\;。
+\end{equation}
+
+\subsubsection{状態方程式}
+圧力$p$と粒子数密度$n$を関係付ける熱力学の状態方程式を扱う：
+\begin{equation}
+	p = C\rho^\gamma\;。
+\end{equation}
+ここで、$C$は定数で$\gamma$は比熱比$C_p/C_V$である。したがって、
+\begin{equation}
+	\frac{\grad{p}}{p} = \gamma\frac{\grad{n}}{n}
+\end{equation}
+となり、等温圧縮では
+\begin{equation}
+	\grad{p} = \grad\qty(nk_{\text{B}}T) = k_{\text{B}}T\grad{n}
+\end{equation}
+が成立するため、明らかに$\gamma=1$となる。断熱圧縮に対しては、自由度$N$に対して
+\begin{equation}
+	\gamma = (2+N)/N
+\end{equation}
+が成立する。
 \newpage
 \section{横波}
 \subsection{電子プラズマ波}
