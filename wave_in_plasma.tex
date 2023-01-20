@@ -48,6 +48,7 @@
 	      \end{itemize}
 \end{itemize}
 
+\newpage
 \section{流体としてのプラズマの解析方法}
 プラズマが流体みなせるための条件は
 \begin{equation}
@@ -79,32 +80,74 @@
 
 \subsection{流体に作用するマクロな力を考慮したプラズマの運動方程式}
 熱運動や衝突を考慮しない式\eqref{eq:ideal_eq}で表される運動方程式では、流体にかかるマクロな力を考慮していない。流体全体の運動量変化を考えることで、マクロな力が加わった運動方程式が導出される。
-まずは、簡単のために$x$方向の圧力変化を考える。粒子は微小時間$\varDelta t$の間に速度$v_x$で$\varDelta x$の距離を進むとする。
+まずは、簡単のために$x$方向の圧力変化を考える。粒子は微小時間$\varDelta t$の間に平均速度$\ev{v_x}$で$\varDelta x$の距離を進むとする。
 
 $x = x_0$が中心であり、体積$\varDelta x\varDelta y\varDelta z$の流体要素に流入する運動量$P_+$は
 \begin{equation}
-	P_+ = \qty[\qty(\varDelta nv_x\varDelta y\varDelta z) mv_x]_{x_0-\varDelta x}\varDelta t
+	P_+ = \qty[\qty(\varDelta n\ev{v_x}\varDelta y\varDelta z) m\ev{v_x}]_{x_0-\varDelta x}\varDelta t
 \end{equation}
-と表される。ここで、$\varDelta n$は速度$v_x$を持って流体要素に流入してくる粒子数であり、$\varDelta n = n/2$の関係がある。
+と表される。ここで、$\varDelta n$は平均速度$\ev{v_x}$を持って流体要素に流入してくる粒子数であり、$\varDelta n = n/2$の関係がある。
 なお、圧力が定義できているということは、粒子の速度分布はMaxwell分布になっていることを用いた。流体要素から流出する運動量$P_-$は
 \begin{equation}
-	P_- = \qty[\qty(\varDelta nv_x\varDelta y\varDelta z) mv_x]_{x_0}\varDelta t
+	P_- = \qty[\qty(\varDelta n\ev{v_x}\varDelta y\varDelta z) m\ev{v_x}]_{x_0}\varDelta t
 \end{equation}
 と表される。したがって、流体要素中の運動量変化は逆方向に進む粒子も考慮して、
 \begin{equation}
-	\frac{\varDelta P}{\varDelta t} = 2\frac{P_+ - P_-}{\varDelta t} =\varDelta y\varDelta z\frac{\qty[mnv_x^2]_{x_0-\varDelta x}-\qty[mnv_x^2]_{x_0}}{\varDelta t}
+	\frac{\varDelta P}{\varDelta t} = 2\frac{P_+ - P_-}{\varDelta t} =\varDelta y\varDelta z\frac{\qty[mn\ev{v_x^2}]_{x_0-\varDelta x}-\qty[mn\ev{v_x^2}]_{x_0}}{\varDelta t}
 \end{equation}
 と表される。$\varDelta t\to 0$の極限を取ると、
 \begin{equation}
-	\pdv{P}{t} = -m\pdv{x}\qty(nv_x^2)\varDelta x\varDelta y\varDelta z
+	\pdv{P}{t} = -m\pdv{x}\qty(n\ev{v_x^2})\varDelta x\varDelta y\varDelta z
 \end{equation}
 となる。これが流体自身の正味の圧力変化と等しくなるため、
 \begin{equation}
-	\pdv{t}(nmu_x)\varDelta x\varDelta y\varDelta z = -m\pdv{x}\qty(nv_x^2)\varDelta x\varDelta y\varDelta z
+	\pdv{t}(nmu_x)\varDelta x\varDelta y\varDelta z = -m\pdv{x}\qty(n\ev{v_x^2})\varDelta x\varDelta y\varDelta z
+	\label{eq:P_henka}
 \end{equation}
 が成立する。ここで、粒子の速度を流体速度$u_x$と熱速度$v_{xT}$に分離する：
 \begin{equation}
-	v_x = u_x + v_{xT},\quad \bar{v}_x = \bar{u}_x,\quad \frac{1}{2}m\bar{v}_{xT} = \frac{1}{2}k_\text{B}T\;。
+	v_x = u_x + v_{xT},\quad \ev{u_x} = u_x,\quad \ev{v_{xT}} = 0,\quad\frac{1}{2}m\ev{v_{xT}^2} = \frac{1}{2}k_\text{B}T\;。
 \end{equation}
+このとき、式\eqref{eq:P_henka}は
+
+\begin{gather}
+	\pdv{t}(mnu_x)  = -m\pdv{x}\qty[n\ev{u_x^2 + 2u_xv_{xT} + v_{xT}^2}] = -m\pdv{x}\qty[n\qty(u_x^2 + \frac{k_\text{B}T}{m})] \\
+	\therefore\; mn\pdv{u_x}{t} + mu_x\pdv{n}{t} = -mu_x\pdv{x}(nu_x) - mnu_x\pdv{u_x}{x} - \pdv{x}\qty(nk_{\text{B}}T)
+\end{gather}
+と計算できる。\footnote{$nu_x^2 = (nu_x)\cdot u_x$とみなして積の微分法を用いた。}
+また、左辺が質量保存則
+\begin{equation}
+	\pdv{n}{t} + \pdv{x}(nu_x) = 0
+\end{equation}
+を用いて、流体の圧力を$P = nk_{\text{B}}T$と置くと、最終的に
+\begin{equation}
+	mn\pdv{u_x}{t} = - mnu_x\pdv{u_x}{x} - \pdv{P}{x}
+\end{equation}
+となる。したがって、$y,\,z$方向でも同様の議論が成立し、理想的な場合の運動方程式と合わせて
+\begin{equation}
+	mn\qty[\pdv{\bm{u}}{t} + \qty(\bm{u}\cdot\grad)\bm{u}] = qn\qty{\bm{E} + \bm{u}\cross\bm{B}} - \grad{P}
+\end{equation}
+となる。
+
+\subsection{流体プラズマを記述する方程式群}
+\subsubsection{運動方程式}
+\subsubsection{Maxwell方程式}
+\subsubsection{連続の式}
+\subsubsection{状態方程式}
+
+\subsubsection{流体方程式のまとめ}
+\newpage
+\section{横波}
+\subsection{電子プラズマ波}
+\subsection{イオン音波}
+\subsection{高域混成振動}
+\subsection{低域混成振動}
+\subsection{静電イオンサイクロトロン波}
+
+\section{縦波}
+\subsection{外部磁場がない場合}
+\subsection{正常波}
+\subsection{異常波}
+\subsection{外部磁場と波数ベクトルが平行な場合}
 
 \end{document}
