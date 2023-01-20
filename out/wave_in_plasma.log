@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  20 JAN 2023 18:48
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  20 JAN 2023 19:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1234,34 +1234,43 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 13.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 13.
-(out/wave_in_plasma.toc)
+(out/wave_in_plasma.toc
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 3.
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 3.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 3.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 3.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 3.
+)
 \tf@toc=\write5
 \openout5 = `wave_in_plasma.toc'.
 
 [1
 
 ]
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 19.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 19.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 19.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 19.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 19.
-[2] (out/wave_in_plasma.aux)
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 54.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 54.
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 57.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 57.
+[2] [3] (out/wave_in_plasma.aux)
 Package rerunfilecheck Info: File `wave_in_plasma.out' has not changed.
-(rerunfilecheck)             Checksum: 6E83AEAEFE127B8022692E9ABBEE883A;236.
+(rerunfilecheck)             Checksum: F3C3B1AB15E745544C01AE70B3DEF27C;750.
  ) 
 Here is how much of TeX's memory you used:
- 38124 strings out of 475422
- 773953 string characters out of 5788032
- 1306928 words of memory out of 5000000
- 59289 multiletter control sequences out of 15000+600000
- 521831 words of font info for 130 fonts, out of 8000000 for 9000
+ 38131 strings out of 475422
+ 774046 string characters out of 5788032
+ 1310928 words of memory out of 5000000
+ 59296 multiletter control sequences out of 15000+600000
+ 522696 words of font info for 135 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 89i,6n,83p,482b,1246s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,6n,83p,482b,1252s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/wave_in_plasma.dvi (2 pages, 5548 bytes).
+Output written on out/wave_in_plasma.dvi (3 pages, 14716 bytes).

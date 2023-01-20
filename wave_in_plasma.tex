@@ -48,11 +48,63 @@
 	      \end{itemize}
 \end{itemize}
 
-\section{流体としてのプラズマ}
+\section{流体としてのプラズマの解析方法}
 プラズマが流体みなせるための条件は
-\begin{itemize}
-	\item イオンや電子の平均自由行程$\ll$プラズマサイズ
-\end{itemize}
+\begin{equation}
+	\text{イオンや電子の平均自由行程}\ll\text{プラズマサイズ}
+\end{equation}
 が満たされることである。プラズマ中で荷電粒子が十分に衝突を繰り返し、Maxwell分布での平衡状態を達成することで温度が定義される。
+\subsection{理想流体としてのプラズマの運動方程式}
+単一荷電粒子の運動方程式は以下で与えられた：
+\begin{equation}
+	m\dv{\bm{v}(t)}{t} = q\qty{\bm{E} + \bm{v}\cross\bm{B}}\;。
+\end{equation}
+まず、衝突や熱運動がないと仮定する。このとき、流体要素中のすべての粒子は一緒に動き、粒子の平均速度$\bm{u}$は個々の粒子の速度$\bm{v}$に等しい。
+したがって、流体の方程式は密度$n$をかけることによって得られる：
+\begin{equation}
+	mn\dv{\bm{u}(t)}{t} = qn\qty{\bm{E} + \bm{u}\cross\bm{B}}\;。
+\end{equation}
+しかし、このままでは扱いにくい。なぜなら、左辺の時間微分は粒子とともに動いている座標系（Lagrange座標系）で行わねばならないからだ。
+この座標系では微小な流体要素の挙動のみを追うことができる。そのため、空間に固定された座標系（Euler座標系）に変換し、プラズマ全体の集団的挙動を解析できるようにする。
+すなわち、あるEuler座標系からの位置ベクトル$\bm{x}$を用いて、プラズマの速度ベクトルの位置依存性を考慮する：
+\begin{equation}
+	\dv{\bm{u}(\bm{x},\,t)}{t} = \pdv{\bm{u}}{t} + \pdv{\bm{u}}{x_i}\dot{x}_i = \pdv{\bm{u}}{t} + \qty(\dot{\bm{x}}\cdot\grad)\bm{u}\;。
+\end{equation}
+ここで、固定された座標系から見たプラズマの位置ベクトルの時間変化$\dot{\bm{x}}$は流体の移動速度$\bm{u}$に他ならず、プラズマの運動方程式は以下のように記述される：
+\begin{equation}
+	mn\qty[\pdv{\bm{u}}{t} + \qty(\bm{u}\cdot\grad)\bm{u}] = qn\qty{\bm{E} + \bm{u}\cross\bm{B}}\;。
+	\label{eq:ideal_eq}
+\end{equation}
+なお、左辺第二項は対流項と呼ばれるものである。
+
+\subsection{流体に作用するマクロな力を考慮したプラズマの運動方程式}
+熱運動や衝突を考慮しない式\eqref{eq:ideal_eq}で表される運動方程式では、流体にかかるマクロな力を考慮していない。流体全体の運動量変化を考えることで、マクロな力が加わった運動方程式が導出される。
+まずは、簡単のために$x$方向の圧力変化を考える。粒子は微小時間$\varDelta t$の間に速度$v_x$で$\varDelta x$の距離を進むとする。
+
+$x = x_0$が中心であり、体積$\varDelta x\varDelta y\varDelta z$の流体要素に流入する運動量$P_+$は
+\begin{equation}
+	P_+ = \qty[\qty(\varDelta nv_x\varDelta y\varDelta z) mv_x]_{x_0-\varDelta x}\varDelta t
+\end{equation}
+と表される。ここで、$\varDelta n$は速度$v_x$を持って流体要素に流入してくる粒子数であり、$\varDelta n = n/2$の関係がある。
+なお、圧力が定義できているということは、粒子の速度分布はMaxwell分布になっていることを用いた。流体要素から流出する運動量$P_-$は
+\begin{equation}
+	P_- = \qty[\qty(\varDelta nv_x\varDelta y\varDelta z) mv_x]_{x_0}\varDelta t
+\end{equation}
+と表される。したがって、流体要素中の運動量変化は逆方向に進む粒子も考慮して、
+\begin{equation}
+	\frac{\varDelta P}{\varDelta t} = 2\frac{P_+ - P_-}{\varDelta t} =\varDelta y\varDelta z\frac{\qty[mnv_x^2]_{x_0-\varDelta x}-\qty[mnv_x^2]_{x_0}}{\varDelta t}
+\end{equation}
+と表される。$\varDelta t\to 0$の極限を取ると、
+\begin{equation}
+	\pdv{P}{t} = -m\pdv{x}\qty(nv_x^2)\varDelta x\varDelta y\varDelta z
+\end{equation}
+となる。これが流体自身の正味の圧力変化と等しくなるため、
+\begin{equation}
+	\pdv{t}(nmu_x)\varDelta x\varDelta y\varDelta z = -m\pdv{x}\qty(nv_x^2)\varDelta x\varDelta y\varDelta z
+\end{equation}
+が成立する。ここで、粒子の速度を流体速度$u_x$と熱速度$v_{xT}$に分離する：
+\begin{equation}
+	v_x = u_x + v_{xT},\quad \bar{v}_x = \bar{u}_x,\quad \frac{1}{2}m\bar{v}_{xT} = \frac{1}{2}k_\text{B}T\;。
+\end{equation}
 
 \end{document}
