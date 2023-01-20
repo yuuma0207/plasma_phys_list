@@ -1,4 +1,7 @@
 \input{~/macro.tex}
+% itemizeの変更
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\triangleright$}
 \title{プラズマ中の波動}
 \author{20B01392 松本侑真}
 \date{\today}
@@ -11,6 +14,45 @@
 \newpage
 
 \section{概要}
-プラズマ中の波動には、外部磁場が印加されている場合とそうでない場合などで分けられる。
+プラズマ中の波動は、外部磁場が印加されている場合とそうでない場合などで沢山の種類に分類される。まずはプラズマ波の一覧を列挙する：
+\begin{itemize}
+	\item 縦波（$\bm{k}\perp \bm{E}$）
+	      \begin{itemize}
+		      \item $\bm{B}_0 = 0$
+		            \begin{itemize}
+			            \item 電子プラズマ波
+			            \item イオン音波
+		            \end{itemize}
+		      \item $\bm{B}_0 \neq 0$
+		            \begin{itemize}
+			            \item 高域混成振動（$T=0$）
+			            \item 低域混成振動
+			            \item 静電イオンサイクロトロン波（$\theta\approx \SI{90}{\deg}$であり、横波成分は必ず含まれる。）
+		            \end{itemize}
+	      \end{itemize}
+	\item 横波（$\bm{k}\varParallel\bm{E}$）
+	      \begin{itemize}
+		      \item $\bm{B}_0 = 0$
+		            \begin{itemize}
+			            \item プラズマ周波数$\omega_P$を遮断周波数とした$\omega > \omega_P$の通常の電磁波
+		            \end{itemize}
+		      \item $\bm{B}_0 =0 \wedge \bm{k}\perp \bm{B}_0$
+		            \begin{itemize}
+			            \item $\bm{E}_1 \varParallel \bm{B}_0$：正常波（O波）
+			            \item $\bm{E}_1 \perp \bm{B}_0$：異常波（X波）
+		            \end{itemize}
+		      \item $\bm{B}_0 =0 \wedge \bm{k}\varParallel \bm{B}_0$
+		            \begin{itemize}
+			            \item L波とR波である円偏光の重ね合わせの電磁波
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
+
+\section{流体としてのプラズマ}
+プラズマが流体みなせるための条件は
+\begin{itemize}
+	\item イオンや電子の平均自由行程$\ll$プラズマサイズ
+\end{itemize}
+が満たされることである。プラズマ中で荷電粒子が十分に衝突を繰り返し、Maxwell分布での平衡状態を達成することで温度が定義される。
 
 \end{document}
