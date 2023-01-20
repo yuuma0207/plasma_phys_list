@@ -1,6 +1,0 @@
-# Fdb version 4
-["dvipdf"] 0 "out/wave_in_plasma.dvi" "out/wave_in_plasma.pdf" "out/wave_in_plasma" 0 -1
-  "out/wave_in_plasma.dvi" 0 -1 0 "latex"
-  (generated)
-  "out/wave_in_plasma.pdf"
-  (rewritten before read)
