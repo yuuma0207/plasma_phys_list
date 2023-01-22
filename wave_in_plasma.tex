@@ -204,13 +204,31 @@ $\bm{B}$との外積を作ることで、運動方程式は以下のように変
 \begin{equation}
 	\bm{v}_\text{D} =  - \frac{\grad P\cross\bm{B}}{qnB^2} \qquad\text{反磁性ドリフト}
 \end{equation}
-である。
+である。反磁性ドリフトによってプラズマが反磁性の性質を持つことを図解する。図\ref{fig:entyu}は、円柱プラズマ内に磁場が印加されており、中心軸方向に圧力勾配が存在する場合を表している。
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{entyuu_plasma.png}
 	\caption{円柱プラズマ内の反磁性ドリフト}
 	\label{fig:entyu}
 \end{figure}
+$\grad{P}\propto -\hat{r},\,\bm{B}\propto \hat{z}$であるため、$\bm{v}_{\text{D}}\propto -\hat{\theta}$となる。
+すなわち、イオンの反磁性ドリフト、電子の反磁性ドリフトそれぞれが外部磁場$\bm{B}$を打ち消す方向の磁気モーメントを生むことがわかる。
+
+次に、対流項が磁場に垂直な成分を持たないことを示す。
+\begin{equation}
+	\bm{v}\cdot\grad =
+	\begin{pmatrix}
+		v_r & v_\theta & v_z
+	\end{pmatrix}
+	\begin{pmatrix}
+		\pdv{r}                 \\
+		\frac{1}{r}\pdv{\theta} \\
+		\pdv{z}
+	\end{pmatrix}
+\end{equation}
+であることより、
+
+
 
 \subsubsection{外部磁場に平行な流体ドリフト}
 
