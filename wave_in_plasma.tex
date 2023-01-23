@@ -195,7 +195,7 @@ $\bm{B}$との外積を作ることで、運動方程式は以下のように変
 \end{equation}
 したがって、
 \begin{equation}
-	\bm{v}_{\perp} = \frac{\bm{E}\cross\bm{B}}{B^2} - \frac{\grad P\cross\bm{B}}{qnB^2} \coloneqq \bm{v}_\text{E} + \bm{v}_\text{D}
+	\bm{v}_{\perp} = \frac{\bm{E}\cross\bm{B}}{B^2} - \frac{\grad P\cross\bm{B}}{qnB^2} \eqqcolon \bm{v}_\text{E} + \bm{v}_\text{D}
 \end{equation}
 と求まる。ここで、
 \begin{equation}
@@ -215,7 +215,7 @@ $\grad{P}\propto -\hat{r},\,\bm{B}\propto \hat{z}$であるため、$\bm{v}_{\te
 すなわち、イオンの反磁性ドリフト、電子の反磁性ドリフトそれぞれが外部磁場$\bm{B}$を打ち消す方向の円電流を生むことがわかる。
 そのため、プラズマ内に同じ方向の電流$\bm{j}_{\text{D}}$が生じることがわかる。その値はプラズマ近似$n_i=n_e=n$の元で
 \begin{equation}
-	\bm{j}_{\text{D}} = ne(\bm{v}_{\text{D}i} - \bm{v}_{\text{D}e}) = \qty(k_{\text{B}}T_i + k_{\text{B}}T_e)\frac{\bm{B}\cross\grad{n}}{B^2}
+	\bm{j}_{\text{D}} = qn(\bm{v}_{\text{D}i} - \bm{v}_{\text{D}e}) = \qty(k_{\text{B}}T_i + k_{\text{B}}T_e)\frac{\bm{B}\cross\grad{n}}{B^2}
 \end{equation}
 である。
 最後に、対流項が磁場に垂直な成分を持たないことを示す。
@@ -237,6 +237,23 @@ $\grad{P}\propto -\hat{r},\,\bm{B}\propto \hat{z}$であるため、$\bm{v}_{\te
 となる。
 
 \subsubsection{外部磁場に平行な流体ドリフト}
+流体の運動方程式の$z$成分は
+\begin{equation}
+	mn\qty[\pdv{v_z}{t} + (\bm{v}\cdot\grad)v_z] = qnE_z - \pdv{p}{z}
+\end{equation}
+である。対流項は時間微分項に比べて無視できることが多い。$p=Cn^\gamma$を代入すると、
+\begin{equation}
+	\pdv{v_z}{t} = \frac{qE_z}{m} - \frac{\gamma k_{\text{B}}T}{mn}\pdv{n}{z}
+\end{equation}
+となる。$m\to 0$の極限（イオンに比べて電子の方が質量が小さいため、電子に対する運動方程式を考えていることになる。）をとると、
+\begin{equation}
+	qE_z = \frac{\gamma{}k_{\text{B}}T}{n}\pdv{n}{z}
+\end{equation}
+となる。$q=-e,\,\bm{E} = -\grad{\phi}$を用いて両辺を積分すると、
+\begin{equation}
+	n=n_0\exp\qty(\frac{e\phi}{k_{\text{B}}T})
+\end{equation}
+と求まる。すなわち、プラズマ中では電子はBoltzmann分布を成していることになる。
 
 \newpage
 \section{横波}
