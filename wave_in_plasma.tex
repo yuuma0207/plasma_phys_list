@@ -272,13 +272,48 @@ $\grad{P}\propto -\hat{r},\,\bm{B}\propto \hat{z}$であるため、$\bm{v}_{\te
 \end{equation}
 と表されることを元にして分散関係を導出することである。
 方程式の線形化とは、全ての物理量を平衡成分と摂動成分（それぞれ添え字に0と1を）に分けることである。
+そして、その摂動成分がどのような関数系になっているかを導出するということである。
 また、摂動成分はその1次項までで近似する。例として、電子に対する方程式群
+\begin{gather}
+	mn_e\qty[\pdv{\bm{v}_e}{t} + \qty(\bm{v}_e\cdot\grad)\bm{v}_e]  = -en_e\bm{E} \\
+	\pdv{n_e}{t} + \div(n_e\bm{v}_e)                                = 0           \\
+	\div{\bm{E}}                                                    = -4\pi{}en_e
+\end{gather}
+を線形化してみる。$\bm{E} = \bm{E}_0 + \bm{E}_1$として、$\bm{E}_1$成分について線形化すると、
+\begin{gather}
+	m\pdv{\bm{v}_1}{t}                                                    = -e\bm{E}_1 \\
+	\pdv{n_{e1}}{t} + n_{e0}\div{\bm{v}_{e1}} + \bm{v}_{e0}\grad{n_{e0}}  = 0          \\
+	\div{\bm{E}_1} = -4\pi e n_{e1}
+\end{gather}
+と1次の摂動で書ける。すべての摂動を$\exp\qty{i(\bm{k}\cdot\bm{r} - \omega{}t)}$として、
+$\bm{v}_{e1} = v_1\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}}$として解くと、線形化した方程式は
 \begin{align}
-	mn_e\qty[\pdv{\bm{v}_e}{t} + \qty(\bm{v}_e\cdot\grad)\bm{v}_e] & = -en_e\bm{E} \\
-	\pdv{n_e}{t} + \div(n_e\bm{v}_e)                               & = 0           \\
-	\div{\bm{E}}                                                   & = -4\pi{}en_e
+	-im\omega{}v_1   & = -eE_1           \\
+	-i\omega{}n_{e1} & = -n_{e0}ikv_{e1} \\
+	ikE_1            & = -4\pi{}en_{e1}
 \end{align}
-を線形化してみる。$\bm{E} = \bm{E}_0 + \bm{E}_1$
+となる。これはイオンについても同様に成立する。上の2式から
+\begin{equation}
+	n_{e1} = \frac{k}{\omega}n_{e0}v_{e1} = \frac{k}{\omega}n_{e0}\qty(\frac{-ie}{m\omega})E_1
+\end{equation}
+となり、これを最後の式に代入すると、
+\begin{equation}
+	\omega^2 E_1 = \frac{4\pi{}n_{e0}e^2}{m}E_1
+\end{equation}
+となり、
+\begin{equation}
+	\omega_{p_e} = \sqrt{\frac{4\pi{}n_{e0}e^2}{m}}
+\end{equation}
+を電子プラズマ周波数と呼ぶ。質量$M$のイオンの寄与まで考えると、
+\begin{equation}
+	\omega^2E_1 =  4\pi{}n_{e0}e^2\qty(\frac{1}{m} + \frac{1}{M})E_1
+\end{equation}
+となり、
+\begin{equation}
+	\omega_{p_i} = \sqrt{\frac{4\pi{}n_{e0}e^2}{M}}
+\end{equation}
+をイオンプラズマ周波数と呼ぶ。
+
 
 \newpage
 
