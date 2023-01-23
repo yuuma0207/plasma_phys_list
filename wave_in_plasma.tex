@@ -48,6 +48,14 @@
 	      \end{itemize}
 \end{itemize}
 
+\subsection{CGS単位系}
+教科書の単位系では、SI単位系における$\varepsilon_0,\,\mu_0$に対して
+\begin{align}
+	\varepsilon_0 & \to \frac{\varepsilon_0}{4\pi} \\
+	\mu_0         & \to 4\pi\mu_0
+\end{align}
+としている。
+
 \newpage
 \section{流体としてのプラズマの解析方法}
 プラズマが流体みなせるための条件は
@@ -253,9 +261,27 @@ $\grad{P}\propto -\hat{r},\,\bm{B}\propto \hat{z}$であるため、$\bm{v}_{\te
 \begin{equation}
 	n=n_0\exp\qty(\frac{e\phi}{k_{\text{B}}T})
 \end{equation}
-と求まる。すなわち、プラズマ中では電子はBoltzmann分布を成していることになる。
+と求まる。すなわち、プラズマ中の電子（外部磁場に平行な成分）はBoltzmann分布をしていることになる。
 
 \newpage
+\section{方程式の線形化と単一モード解析}
+いろんな種類の波に対する共通の考え方が方程式の線形化と単一モード解析である。
+単一モード解析とは、各周波数$\omega$と波数$k$を用いて、物理量$\bm{A}$が
+\begin{equation}
+	\bm{A}(\bm{r},\,t) = \exp\qty{i\qty(\bm{k}\cdot\bm{r} - \omega{}t)}
+\end{equation}
+と表されることを元にして分散関係を導出することである。
+方程式の線形化とは、全ての物理量を平衡成分と摂動成分（それぞれ添え字に0と1を）に分けることである。
+また、摂動成分はその1次項までで近似する。例として、電子に対する方程式群
+\begin{align}
+	mn_e\qty[\pdv{\bm{v}_e}{t} + \qty(\bm{v}_e\cdot\grad)\bm{v}_e] & = -en_e\bm{E} \\
+	\pdv{n_e}{t} + \div(n_e\bm{v}_e)                               & = 0           \\
+	\div{\bm{E}}                                                   & = -4\pi{}en_e
+\end{align}
+を線形化してみる。$\bm{E} = \bm{E}_0 + \bm{E}_1$
+
+\newpage
+
 \section{横波}
 \subsection{電子プラズマ波}
 \subsection{イオン音波}
