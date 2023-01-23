@@ -213,8 +213,11 @@ $\bm{B}$との外積を作ることで、運動方程式は以下のように変
 \end{figure}
 $\grad{P}\propto -\hat{r},\,\bm{B}\propto \hat{z}$であるため、$\bm{v}_{\text{D}}\propto -\hat{\theta}$となる。
 すなわち、イオンの反磁性ドリフト、電子の反磁性ドリフトそれぞれが外部磁場$\bm{B}$を打ち消す方向の円電流を生むことがわかる。
-そのため、プラズマ内に同じ方向の電流が生じることがわかる。
-
+そのため、プラズマ内に同じ方向の電流$\bm{j}_{\text{D}}$が生じることがわかる。その値はプラズマ近似$n_i=n_e=n$の元で
+\begin{equation}
+	\bm{j}_{\text{D}} = ne(\bm{v}_{\text{D}i} - \bm{v}_{\text{D}e}) = \qty(k_{\text{B}}T_i + k_{\text{B}}T_e)\frac{\bm{B}\cross\grad{n}}{B^2}
+\end{equation}
+である。
 最後に、対流項が磁場に垂直な成分を持たないことを示す。
 \begin{equation}
 	\bm{v}\cdot\grad =
