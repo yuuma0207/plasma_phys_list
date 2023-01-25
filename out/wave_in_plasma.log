@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  25 JAN 2023 13:45
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  25 JAN 2023 14:00
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1269,17 +1269,22 @@ LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 [4] [5]
 File: ./pic//entyuu_plasma.png Graphic file (type bmp)
 <./pic//entyuu_plasma.png>
-[6] [7] [8] [9] [10] [11] [12] (out/wave_in_plasma.aux)
+[6] [7] [8] [9]
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 397.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 397.
+[10] [11] [12] (out/wave_in_plasma.aux)
 Package rerunfilecheck Info: File `wave_in_plasma.out' has not changed.
 (rerunfilecheck)             Checksum: FB8DF073B7F9FDEBFA938225C1C6B397;2792.
  ) 
 Here is how much of TeX's memory you used:
- 38160 strings out of 475422
- 774510 string characters out of 5788032
+ 38164 strings out of 475422
+ 774555 string characters out of 5788032
  1321928 words of memory out of 5000000
- 59320 multiletter control sequences out of 15000+600000
- 522940 words of font info for 137 fonts, out of 8000000 for 9000
+ 59323 multiletter control sequences out of 15000+600000
+ 523422 words of font info for 140 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 89i,15n,83p,482b,1257s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,17n,83p,482b,1257s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/wave_in_plasma.dvi (12 pages, 69668 bytes).
+Output written on out/wave_in_plasma.dvi (12 pages, 71120 bytes).

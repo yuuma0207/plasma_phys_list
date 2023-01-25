@@ -383,14 +383,20 @@ $\bm{v}_{e1} = v_1\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}}$として解くと�
 	\omega^2 = \omega^2_{pe} + \frac{3}{2}k^2v^2_{\text{th}}\;。
 \end{equation}
 
-電子プラズマ波の位相速度と群速度は
+電子プラズマ波の位相速度と群速度は、$2\omega{}\dd{\omega} = 3kv^2_{\text{th}}\dd{k}$より
 \begin{align}
 	\text{位相速度}\quad{}v^2_{\phi} & \coloneqq \frac{\omega^2}{k^2} = \qty(\frac{\omega_{pe}}{k})^2 + \frac{3}{2}v^2_{\text{th}} \to \frac{3}{2}v^2_{\text{th}}\quad(k\to\infty)\;, \\
-	\text{群速度}\quad{}v_g         & \coloneqq \pdv{\omega}{k} = \frac{c^2k}{\sqrt{\omega^2_{pe} + c^2k^2}} = \frac{c^2}{v_{\phi}} < c \quad\text{（情報の伝達速度）}\;,                     \\
+	\text{群速度}\quad{}v_g         & \coloneqq \pdv{\omega}{k} = \frac{3}{2}\frac{k}{\omega}v^2_{\text{th}} = \frac{3}{2}\frac{v^2_{\text{th}}}{v_{\phi}}
+	\begin{cases}
+		\to\sqrt{\frac{3}{2}}v_{\text{th}} & \quad(k\to\infty) \\
+		< v_{\text{th}}                    & \quad(k\to 0)
+	\end{cases} \quad\text{（情報の伝達速度）}
 \end{align}
-
-
-
+となる。すなわち、
+\begin{itemize}
+	\item $k\to\infty$のとき、波の情報は熱運動で伝わる。これは、通常の流体中の微小擾乱が音波の速度で伝わるのと同じである。\footnote{\url{https://takun-physics.net/2738/}参考}
+	\item $k\to 0$のとき、位相速度$v_{\phi}$は熱速度$v_{\text{th}}$より大きくても、波の情報は熱速度よりゆっくりと伝わる。熱速度は、縦波の代表的な位相速度である。（横波は光速$c\;。$）
+\end{itemize}
 
 
 
@@ -448,5 +454,6 @@ $\bm{B}=\bm{0}$のときの横波であるため、$\bm{j}_1$をプラズマ電�
 \subsection{正常波}
 \subsection{異常波}
 \subsection{外部磁場と波数ベクトルが平行な場合}
+
 
 \end{document}
