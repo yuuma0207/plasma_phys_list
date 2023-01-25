@@ -54,8 +54,8 @@
 \subsection{CGS単位系}
 教科書の単位系では、SI単位系における$\varepsilon_0,\,\mu_0$に対して
 \begin{align}
-	\varepsilon_0 & \to \frac{\varepsilon_0}{4\pi} \\
-	\mu_0         & \to 4\pi\mu_0
+	\varepsilon_0 & \to \frac{1}{4\pi} \\
+	\mu_0         & \to 4\pi
 \end{align}
 としている。
 
@@ -280,7 +280,7 @@ $\grad{P}\propto -\hat{r},\,\bm{B}\propto \hat{z}$であるため、$\bm{v}_{\te
 を用いることができないことに注意する必要がある。
 また、電子が高周波で運動している場合にプラズマ近似ができないのは、イオンの質量が大きいため電子の運動に追従することができなくなり、電子とイオンの密度に差が生じてしまうからである。
 
-\newpage
+
 \section{方程式の線形化と単一モード解析}
 いろんな種類の波に対する共通の考え方が方程式の線形化と単一モード解析である。
 単一モード解析とは、各周波数$\omega$と波数$k$を用いて、物理量$\bm{A}$が
@@ -328,13 +328,9 @@ $\bm{v}_{e1} = v_1\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}}$として解くと�
 \end{equation}
 となり、これを最後の式に代入すると、
 \begin{equation}
-	\omega^2 E_1 = \frac{4\pi{}n_{e0}e^2}{m}E_1
+	\omega^2 E_1 = \frac{4\pi{}n_{e0}e^2}{m}E_1 = \omega^2_{pe}E_1
 \end{equation}
-となり、
-\begin{equation}
-	\omega_{pe} = \sqrt{\frac{4\pi{}n_{e0}e^2}{m}}
-\end{equation}
-を電子プラズマ周波数と呼ぶ。質量$M$のイオンの寄与まで考えると、
+となり、$\omega_{pe}$を電子プラズマ周波数と呼ぶ。質量$M$のイオンの寄与まで考えると、
 \begin{equation}
 	\omega^2E_1 =  4\pi{}n_{e0}e^2\qty(\frac{1}{m} + \frac{1}{M})E_1
 \end{equation}
@@ -344,6 +340,7 @@ $\bm{v}_{e1} = v_1\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}}$として解くと�
 \end{equation}
 をイオンプラズマ周波数と呼ぶ。
 
+\newpage
 \section{縦波}
 \subsection{電子プラズマ波}
 電子のプラズマ振動が熱運動によって伝播する波が電子プラズマ波である。熱運動を考慮するために断熱変化による圧力項
@@ -394,13 +391,58 @@ $\bm{v}_{e1} = v_1\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}}$として解くと�
 \end{align}
 となる。すなわち、
 \begin{itemize}
-	\item $k\to\infty$のとき、波の情報は熱運動で伝わる。これは、通常の流体中の微小擾乱が音波の速度で伝わるのと同じである。\footnote{\url{https://takun-physics.net/2738/}参考}
-	\item $k\to 0$のとき、位相速度$v_{\phi}$は熱速度$v_{\text{th}}$より大きくても、波の情報は熱速度よりゆっくりと伝わる。熱速度は、縦波の代表的な位相速度である。（横波は光速$c\;。$）
+	\item $k\to\infty$のとき、波の情報は熱運動で伝わる。これは、通常の流体中の微小擾乱が音波の速度で伝わるのと同じである。\footnote{\url{https://takun-physics.net/2738/}を参考。}
+	\item $k\to 0$のとき、位相速度$v_{\phi}$は熱速度$v_{\text{th}}$より大きくても、波の情報は熱速度よりゆっくりと伝わる。熱速度は、縦波の代表的な位相速度である。（横波は光速$c$である。）
 \end{itemize}
 
 
 
 \subsection{イオン音波}
+イオン音波を導出するためには、イオンの慣性項が重要であるため、低周波振動を考えることになる。
+そのため、プラズマ近似が成立しており、プラズマ振動や電子プラズマ波の場合のように、Poisson方程式を用いることができない。
+その代わりに連続の式を用いることで、イオン衝突の振動であるイオン音波を導出することができる。
+
+磁場のないときのイオン流体の方程式は、電場が静電場であると仮定し、状態方程式を用いると
+\begin{align}
+	Mn_{i}\qty[\pdv{\bm{v}_{i}}{t} + ({\bm{v}_{i}}\vdot\grad)\bm{v}_{i}] = en\bm{E} - \grad{P} = -en_i\grad{\phi} - \gamma_ik_{\text{B}}T_i\grad{n_i}
+\end{align}
+となる。これを1次の摂動までで線形化すると
+\begin{equation}
+	Mn_{i0}(-i\omega)v_{i1} = -en_{i0}ik\phi_1 - \gamma_ik_{\text{B}}T_iikn_{i1}
+\end{equation}
+となる。なお、圧力勾配や密度勾配にはイオンの寄与のみを考えた。\footnote{これの妥当性がよくわからないと思ったが、$\gamma_e=1$の話をしているところで解決済み？}
+ここで、$\bm{B}=\bm{0}$であるため、電子の密度分布がBoltzmann分布になっていることより、
+\begin{equation}
+	n_e = n_i = n_0\exp\qty(\frac{e\phi_1}{k_{\text{B}}T_e}) = n_0\qty(1 + \frac{e\phi_1}{k_{\text{B}}T_e}) = n_0 + n_1
+\end{equation}
+となる。なお、$n_0$は平衡プラズマの密度を表しており、電子とイオンがともにBoltzmann分布をしているため$\bm{E}_0=\bm{0}$と仮定することができる。
+そのため$\phi_0 = 0$と置いた。
+
+また、イオンの連続の式
+\begin{equation}
+	\pdv{n_i}{t} + \div{\qty(n_i\bm{v}_i)} = 0
+\end{equation}
+を線形化すると
+\begin{equation}
+	i\omega{}n_{i1} = ikn_{i0}v_{i1}
+\end{equation}
+となるため運動方程式は、$n_{i0} = n_0$とおいて
+\begin{equation}
+	Mn_0\omega{}v_{i1} = en_0k\frac{k_{\text{B}}T_e}{en_0}\frac{kn_0v_{i1}}{\omega} + \gamma_ik_{\text{B}}T_ik\frac{kn_0v_{i1}}{\omega}
+\end{equation}
+となる。したがって、
+\begin{equation}
+	\omega^2 = k^2\qty(\frac{k_{\text{B}}T_e}{M} + \frac{\gamma_ik_{\text{B}}T_i}{M}) \iff \frac{\omega}{k} = \sqrt{\frac{k_{\text{B}}T_e + \gamma_ik_{\text{B}}T_i}{M}} \coloneqq v_s
+\end{equation}
+と分散関係が求まる。なお、位相速度と群速度は同じ値であり、$v_s$はプラズマ中の音速を表す。
+
+なお、今仮定している縦波の平面波では、イオンは１次元の圧縮を受けることになるため、$\gamma_i = 3$となる。
+電子はこの波と比べて非常に速く動くため、温度が均一になりやすく等温であると考えて良い。そのため圧力勾配の式において電子の寄与を考えておらず、$\gamma_e=1$が省略されているとみなせる。
+さもなければ$v_s$中で$\gamma_ek_{\text{B}}T_e$と補正されることになる。
+
+また、$T_i = 0$でも$T_e > 0$であればイオン音波は伝搬することがわかる。
+イオン自身は運動エネルギーを持たないものの、電子がBoltzmann分布を形成する際の摂動によって電場を形成することで、それに引っ張られる運動が生じているのである。
+
 \subsection{高域混成振動}
 \subsection{低域混成振動}
 \subsection{静電イオンサイクロトロン波}
