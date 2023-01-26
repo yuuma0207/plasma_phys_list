@@ -494,10 +494,99 @@ $\bm{v}_{e1} = v_1\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}}$として解くと�
 \end{itemize}
 となる。
 
-\subsection{高域混成振動}
+\subsection{高域混成振動：背景磁場に垂直な電子プラズマ振動}
+以下は外部磁場$\bm{B}_0$が存在する場合の縦波である。まずは、$\bm{B}_0$に垂直な電子振動を考える。
+なお、垂直、平行は摂動を受けない磁場$\bm{B}_0$に対する$\bm{k}$の方向を表す。
+縦、横は摂動している電場$\bm{E}_1$に対する$\bm{k}$の方向を示す。
+また、摂動している磁場$\bm{B}_1 = \bm{0}$ならば静電的な波動であり、そうでなければ電磁的な波動である。これは、
+\begin{equation}
+	\curl{\bm{E}_1} = -\dot{\bm{B}}_1 \iff \bm{k}\cross\bm{E}_1 = \omega\bm{B}_1
+\end{equation}
+に起因している。例えば縦波（$\bm{k}\varParallel\bm{E}_1$）であれば摂動磁場がなくなり、波動は静電波になる。
 
-\subsection{低域混成振動}
-\subsection{静電イオンサイクロトロン波}
+高域混成振動では以下の2つを仮定している。すなわち、電子の高周波振動を考えることになる。（Poisson方程式を用いることができる。）
+\begin{itemize}
+	\item イオンは空間的に不動で一様
+	\item 熱運動$k_{\text{B}}T_e$は$0$であるため、圧力項は存在しない。
+\end{itemize}
+今は縦波を考えているため、座標軸を$\bm{k} = k\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}},\,\bm{B}_0 = B_0\hat{\bm{z}}$と取ることができる。また、電子の運動は以下の方程式群で記述される：
+\begin{align}
+	m\pdv{v_{e1}}{t}                          & = -e\qty(\bm{E}_1 + \bm{v}_{e1}\cross\bm{B}_0)\;, \\
+	\pdv{n_{e1}}{t} + \div(n_{e0}\bm{v}_{e1}) & = 0\;,                                            \\
+	\div{\bm{E}_1}                            & = -4\pi{}en_{e1}\;。
+\end{align}
+運動方程式を成分ごとに表して線形化すると
+\begin{align}
+	-i\omega{}mv_{x} & = -eE_1 - ev_yB_0 \\
+	-i\omega{}mv_y   & = ev_xB_0         \\
+	-i\omega{}mv_z   & = 0
+\end{align}
+となる。$v_y$を消去すると、$\omega_c = eB_0/m$を用いて
+\begin{equation}
+	i\omega{}mv_{x} = eE_1 + e\frac{iev_xB_0}{\omega{}m}B_0 \iff v_x = \frac{eE_1/im\omega}{1 - \omega^2_c/\omega^2}
+\end{equation}
+となる。サイクロトロン共鳴$\omega=\omega_c$では電場と$v_x$の位相が常に一致し、常に$v_x$方向の加速を促すために$v_x$は無限大へと発散してしまう。
+さらに、分散関係を求めるために他2式を用いると、
+\begin{equation}
+	ikn_{e0}\frac{eE_1/im\omega}{1-\omega^2_c/\omega^2} = -i\omega\frac{ikE_1}{4\pi{}e} \iff\omega^2 \qty(1-\frac{\omega^2_c}{\omega^2}) = \frac{4\pi{}n_0e^2}{m} = \omega^2_{pe}
+\end{equation}
+を得る。すなわち、
+\begin{equation}
+	\omega^2 = \omega^2_{pe} + \omega^2_c \coloneqq \omega_{\text{UH}}^2\quad\text{（Upper Hybrid oscillation）}
+\end{equation}
+と計算できる。つまり、背景磁場$\bm{B}_0$に沿う運動は、電子の変位に起因する復元力で通常のプラズマ振動を行い、磁場を横切る運動はサイクロトロン角周波数で磁力線を横切る運動を行うと解釈できる。
+
+\newpage
+
+\subsection{静電イオンサイクロトロン波：背景磁場に「ほぼ」垂直なイオン音波}
+次に背景磁場が存在する場合のイオン音波について考える。高域混成振動と同様に、背景磁場の効果を見たいため、磁場に垂直な成分を考える。
+また、$\bm{k}\vdot\bm{B}_0 = kB_0\cos\theta$と置いたときの$\theta$が厳密に$\pi/2$である場合とそうでない場合で電子の運動が大きく異なるため、
+まずは「ほぼ」垂直であるとして考える。なお、イオンの運動に関しては大きな違いは生じない。電子が$\bm{B}_0$に対する運動としては
+\begin{itemize}
+	\item $\bm{B}_0$に垂直な方向：サイクロトロン運動によるLarmor半径が小さいために異なる磁力線へと移ることができない。
+	\item $\bm{B}_0$に平行な方向：$\theta\neq 0$であるため、磁力線に沿って運動することでイオン音波の定密度面間を運動することができる。
+	      すなわち、平行な方向にはDebye遮蔽を形成する。（図\ref{fig:hobo90}参考）
+\end{itemize}
+イオンは慣性が大きいため、電子のように異なる波面に移ることができず、イオンの運動に関しての波数は$\bm{k} = k\hat{\bm{x}}$とみなして良い。
+また、以下では簡単のために$k_{\text{B}}T_i = 0,\,k_{\text{B}}T_e\neq 0$とする。$T_i=0$でもイオン音波は存在し、重要な物理が見られるため問題ない。
+さらに、$\bm{k}\cross\bm{E} = 0$の静電波を仮定し、$\bm{E} = -\grad\phi$とする。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{hobo90.png}
+	\caption{$\bm{B}_0$に対してほぼ垂直な静電イオンサイクロトロン波}
+	\label{fig:hobo90}
+\end{figure}
+
+このとき、イオンの運動方程式は
+\begin{equation}
+	M\pdv{v_{i1}}{t} = -e\grad{\phi_1} + e\bm{v}_{i1}\cross\bm{B}_0
+\end{equation}
+となる。Poisson方程式と連続の式を含めて単一モード解析を行って成分ごとに分けると、（イオンの波動は$x$方向のみであることに注意して）
+\begin{align}
+	-i\omega{}Mv_{ix}                & = -eik\phi_1 + ev_{iy}B_0 \\
+	-i\omega{}Mv_{iy}                & = -ev_{ix}B_0             \\
+	-ik\phi_1                        & = 4\pi{}en_{i1}           \\
+	-i\omega{}n_{i1} +n_{i0}ikv_{ix} & = 0
+\end{align}
+となる。上の2式から、イオンサイクロトロン周波数を$\Omega_{c} = eB/M$とおくと
+\begin{equation}
+	\omega{}Mv_{ix} = ek\phi_1 + e\frac{ev_{ix}B_0}{\omega{}M}B_0 \implies v_{ix} = \frac{ek}{\omega{}M}\phi_1\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}
+\end{equation}
+を得る。さらに、電子は$\bm{B}_0$方向に動けるため、電子についてBoltzmann分布が成立していると仮定して良い。さらに、電子は低周波振動を考えているためプラズマ近似が成立し、
+\begin{equation}
+	n_{i1} = n_{e0}\frac{e\phi_1}{k_{\text{B}}T_e}
+\end{equation}
+となる。そのため、残りの方程式を用いると
+\begin{equation}
+	\qty(1-\frac{\Omega^2_c}{\omega^2})v_{ix} = \frac{ek}{\omega{}M}\frac{k_{\text{B}}T_e}{en_{e0}}\frac{n_{i0}k}{\omega}v_{ix}
+	\implies \omega^2 = \Omega^2_c + k^2\frac{k_{\text{B}}T_e}{M} = \Omega^2_c + k^2v^2_s
+\end{equation}
+と分散関係が求まる。この波は高域混成振動の物理と似ていることがわかる。イオン音波のときに導いたように、イオンは音波型の振動を行うが、外部磁場によるLorentz力でサイクロトロン運動の復元力が働く。
+また、電子によるDebye遮蔽が形成されている場合は、外部磁場の影響を考えなくて済むため、通常のイオン音波の分散関係$\omega^2 = k^2v^2_s$が適用できる。
+
+\subsection{低域混成振動：厳密に垂直なイオン音波}
+次に、厳密に$\theta=\SI{90}{deg}$であるときのイオン音波を考える。このとき、電子の密度分布はBoltzmann分布を形成できず、イオンと同じ運動を行う。
+すなわち、イオンの結果において$e\to{}-e,\,M\to{}m,\,\Omega_c\to{}-\omega_c$と置き換えるだけで良い。
 
 \newpage
 \section{横波}
@@ -509,7 +598,7 @@ $\bm{B}=\bm{0}$のときの横波であるため、$\bm{j}_1$をプラズマ電�
 \end{align}
 単一モード解析を用いると、横波では$\div{\bm{E}}_1 = \bm{k}\vdot\bm{E}_1 = 0$であることより
 \begin{equation}
-	c^2k^2\bm{E}_1 = -\qty(-4\pi{}i\omega{}\bm{j}_1 - \omega^2\bm{E}_1) \iff (\omega^2 - c^2k^2)\bm{E}_1 = -4\pi{}i\omega\bm{j}_1
+	c^2k^2\bm{E}_1 = -\qty(-4\pi{}i\omega{}\bm{j}_1 - \omega^2\bm{E}_1) \implies (\omega^2 - c^2k^2)\bm{E}_1 = -4\pi{}i\omega\bm{j}_1
 \end{equation}
 となる。なお、今の状況では以下の仮定を置いている：
 \begin{itemize}
