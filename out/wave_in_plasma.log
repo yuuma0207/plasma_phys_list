@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  27 JAN 2023 00:32
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  27 JAN 2023 01:04
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1251,43 +1251,60 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 
 [1
 
-]
+] [2]
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 54.
+(Font)              scaled to size 11.09619pt on input line 57.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 54.
-[2]
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 66.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 66.
+(Font)              scaled to size 11.09619pt on input line 57.
 [3]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 128.
+(Font)              scaled to size 6.47278pt on input line 69.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 128.
-[4] [5]
+(Font)              scaled to size 4.62341pt on input line 69.
+[4]
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 131.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 5.5481pt on input line 131.
+[5] [6]
 File: ./pic//entyuu_plasma.png Graphic file (type bmp)
 <./pic//entyuu_plasma.png>
-[6] [7] [8]
+[7] [8] [9]
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 394.
+(Font)              scaled to size 7.39746pt on input line 397.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 394.
-[9] [10] [11] [12]
+(Font)              scaled to size 7.39746pt on input line 397.
+[10] [11] [12] [13]
 File: ./pic//hobo90.png Graphic file (type bmp)
 <./pic//hobo90.png>
-[13] [14] [15] [16] [17] [18] (out/wave_in_plasma.aux)
+[14] [15] [16] [17] [18] [19]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 830.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 830.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 830.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 830.
+
+[20] [21] (out/wave_in_plasma.aux)
 Package rerunfilecheck Info: File `wave_in_plasma.out' has not changed.
-(rerunfilecheck)             Checksum: 2789E5F3E0B84CF72BBC6F076B26364C;3710.
+(rerunfilecheck)             Checksum: B7C84644DA5156C9769C940C45D0EC91;4130.
  ) 
 Here is how much of TeX's memory you used:
- 38174 strings out of 475422
- 774727 string characters out of 5788032
- 1329928 words of memory out of 5000000
- 59332 multiletter control sequences out of 15000+600000
+ 38176 strings out of 475422
+ 774760 string characters out of 5788032
+ 1329929 words of memory out of 5000000
+ 59334 multiletter control sequences out of 15000+600000
  523422 words of font info for 140 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  89i,19n,83p,482b,1260s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/wave_in_plasma.dvi (18 pages, 121372 bytes).
+Output written on out/wave_in_plasma.dvi (21 pages, 130748 bytes).

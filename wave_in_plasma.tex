@@ -45,7 +45,10 @@
 		            \end{itemize}
 		      \item $\bm{B}_0 \neq 0 \wedge \bm{k}\varParallel \bm{B}_0$
 		            \begin{itemize}
-			            \item L波とR波である円偏光の重ね合わせの電磁波
+			            \item R波とL波である円偏光の重ね合わせの電磁波
+			                  \begin{itemize}
+				                  \item R波は電子のサイクロトロン運動と同じ方向に偏光し、L波はイオンのサイクロトロン運動と同じ方向に偏光する。
+			                  \end{itemize}
 		            \end{itemize}
 	      \end{itemize}
 \end{itemize}
@@ -778,6 +781,7 @@ R波とL波はそれぞれ右回り、左回り円偏光を表す。外部磁場
 となる。
 \subsubsection{$L$波と$R$波が円偏光を成すことの証明}
 
+\newpage
 \section{遮断周波数と共鳴周波数}
 \begin{itemize}
 	\item 遮断(cutoff)周波数とは、プラズマ中の屈折率$N$が$N=ck/\omega=0$となるときの周波数である。
@@ -790,10 +794,55 @@ R波とL波はそれぞれ右回り、左回り円偏光を表す。外部磁場
 		      \item 共鳴周波数の条件は$N\to\infty$と見ても良い。
 	      \end{itemize}
 \end{itemize}
+\subsection{異常波について}
+異常波の分散関係は
+\begin{equation}
+	N^2 = \frac{c^2}{v^2_{\phi}} = 1-\frac{\omega^2_{pe}}{\omega^2}\frac{\omega^2-\omega^2_{pe}}{\omega^2-\omega^2_{\text{UH}}}
+	= 1-\frac{\omega^2_{pe}}{\omega^2}\frac{1}{1-\omega^2_c/(\omega^2-\omega^2_{pe})}
+\end{equation}
+であった。したがって、遮断周波数を与える方程式は以下のようになる：
+\begin{align}
+	1-\frac{\omega^2_c}{\omega^2-\omega^2_{pe}} & = \frac{\omega^2_{pe}}{\omega^2} \notag                             \\
+	1-\frac{\omega^2_{pe}}{\omega^2}            & = \frac{\omega^2_c/\omega^2}{1-\qty(\omega^2_{pe}/\omega^2)} \notag \\
+	\qty(1-\frac{\omega^2_{pe}}{\omega^2})^2    & = \frac{\omega^2_c}{\omega^2}                                \notag \\
+	\omega^2 \mp \omega_c\omega -\omega^2_{pe}  & = 0
+\end{align}
+したがって、
+\begin{equation}
+	\omega_R = \frac{1}{2}\qty[\omega_c + \qty(\omega_c^2 + 4\omega_{pe}^2)^{1/2}],\,\omega_L =  \frac{1}{2}\qty[-\omega_c + \qty(\omega_c^2 + 4\omega_{pe}^2)^{1/2}]
+\end{equation}
+がそれぞれの波のカットオフ周波数である。また、共鳴周波数は
+\begin{equation}
+	\omega = \omega_{\text{UH}} = \sqrt{\omega^2_{pe} + \omega^2_c}
+\end{equation}である。
 
+\subsection{正常波について}
+正常波の分散関係は
+\begin{equation}
+	\omega^2 = \omega^2_{pe} + c^2k^2
+\end{equation}
+であった。したがって、
+\begin{equation}
+	N^2 = \frac{c^2k^2}{\omega^2} = 1 - \frac{\omega^2_{pe}}{\omega^2}
+\end{equation}
+となる。つまり、カットオフ周波数は$\omega = \omega_{pe}$で、共鳴周波数は存在しない。
 
+\subsection{$L$波と$R$波について}
+$L$波と$R$波の分散関係は
+\begin{equation}N^2 = \frac{c^2k^2}{\omega^2}=
+	\begin{dcases}
+		1-\frac{\omega^2_{pe}/\omega^2}{1-(\omega_c/\omega)^2} \quad\text{（R波）} \\
+		1-\frac{\omega^2_{pe}/\omega^2}{1+(\omega_c/\omega)^2} \quad\text{（L波）}
+	\end{dcases}
+\end{equation}
+であった。R波については、共鳴周波数が$\omega=\omega_c$であり、カットオフ周波数は異常波のそれと同じ方程式（符号が負の方）で与えられる。したがって、
+カットオフ周波数は$\omega=\omega_R$となる。
 
+L波については共鳴周波数が存在しない。直感的には、L波の偏光方向は電子のサイクロトロン運動と逆方向であるために共鳴しないという理解ができる。
+実際にイオンの運動を考慮して方程式を解くと、共鳴周波数はイオンサイクロトロン周波数$\omega=\Omega_c$で共鳴周波数を持つ。
+カットオフ周波数は$\omega=\omega_L$である。
 
+\section{まとめ}
 
 
 
