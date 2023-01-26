@@ -691,6 +691,7 @@ $\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{z}},\,\bm{k} = k\hat{\bm{x}
 となる。また、波の方程式は$\div{\bm{E}_1} = i\bm{k}\vdot\bm{E}_1 = ikE_x$であり、$\grad{ikE_x} = ik\grad{E_x} = -kE_x\bm{k}$となることから、
 \begin{equation}
 	(\omega^2 - c^2k^2)\bm{E}_1 + c^2kE_x\bm{k} = -4\pi{}i\omega\bm{j}_1 = 4\pi{}in_0\omega{}e\bm{v}_{e1}
+	\label{eq:ijouha}
 \end{equation}
 となる。これを成分にわけて$v_x,\,v_y$の表式を代入すると、
 \begin{align}
@@ -725,21 +726,75 @@ $\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{z}},\,\bm{k} = k\hat{\bm{x}
 \end{equation}
 と変形できる。これは
 \begin{equation}
-	\frac{c^2k^2}{\omega^2}\qty(\omega^2-\omega^2_c) = \omega^2-\omega^2_{\text{UH}} - \frac{(\omega^2_{pe}\omega_c/\omega)^2}{\omega^2-\omega^2_{\text{UH}}}
+	\frac{c^2k^2}{\omega^2}\qty(\omega^2-\omega^2_c) = \omega^2-\omega^2_{\text{UH}} - \frac{(\omega^2_{pe}\omega_c/\omega)^2/(\omega^2-\omega^2_{\text{UH}})}{\omega^2-\omega^2_{\text{UH}}}
 \end{equation}
 となる。位相速度$v_{\phi}$を用いると$c^2k^2/\omega^2 = c^2/v^2_{\phi}$となることから、分散関係は
 \begin{equation}
-	\frac{c^2}{v^2_{\phi}} = \frac{\omega^2-\omega^2_{\text{UH}} - (\omega^2_{pe}\omega_c/\omega)^2}{\omega^2-\omega^2_c}
+	\frac{c^2}{v^2_{\phi}} = \frac{\omega^2-\omega^2_{\text{UH}} - (\omega^2_{pe}\omega_c/\omega)^2/(\omega^2-\omega^2_{\text{UH}})}{\omega^2-\omega^2_c}
 \end{equation}
 となる。ここで、$\omega^2_{\text{UH}} = \omega^2_{pe} + \omega^2_c$と戻すと
-\begin{equation}
-	\frac{c^2}{v^2_{\phi}} = \frac{\omega^2 - \omega^2_{pe} - \omega^2_c - \omega^4_{pe}\omega^2_c/\omega^2}{\omega^2-\omega^2_c}
-	= 1-\frac{\omega^2_{pe}\qty(1 + \omega^2\omega)}{\omega^2-\omega^2_c}
-\end{equation}
-
-
+\begin{align}
+	\frac{c^2}{v^2_{\phi}} & = \frac{\omega^2 - \omega^2_{pe} - \omega^2_c - (\omega^4_{pe}\omega^2_c/\omega^2)/(\omega^2-\omega^2_{\text{UH}})}{\omega^2-\omega^2_c}                 \\
+	                       & = 1-\frac{\omega^2_{pe}\qty(\omega^2-\omega^2_{pe}-\omega^2_c + \omega^2_{pe}\omega_c^2/\omega^2)}{(\omega^2-\omega^2_c)(\omega^2-\omega^2_{\text{UH}})}
+	= 1-\omega^2_{pe}\frac{(\omega^2-\omega^2_c-\omega^2_{pe}\qty(1-\omega^2_{c}/\omega^2))}{(\omega^2-\omega^2_c)(\omega^2-\omega^2_{\text{UH}})}                                    \\
+	                       & =1-\frac{\omega^2_{pe}}{\omega^2}\frac{(\omega^2-\omega^2_c)\qty(\omega^2-\omega^2_{pe})}{(\omega^2-\omega^2_c)(\omega^2-\omega^2_{\text{UH}})}
+	= 1-\frac{\omega^2_{pe}}{\omega^2}\frac{\omega^2-\omega^2_{pe}}{\omega^2-\omega^2_{\text{UH}}}
+\end{align}
+と求まる。
 
 \subsection{外部磁場と波数ベクトルが平行な場合}
+次に、$\bm{B}_0=B_0\hat{\bm{z}},\,\bm{k} = k\hat{\bm{z}},\,\bm{E}_1 = E_x\hat{\bm{x}} + E_y\hat{\bm{y}}$とする。
+このとき、異常波の方程式において$\bm{k}$を変更すれば良いだけであり、式\eqref{eq:ijouha}を参考にして、
+\begin{align}
+	(\omega^2 - c^2k^2)E_x & = \omega^2_{pe}\qty(E_x -i\frac{\omega_c}{\omega}E_y)\qty(1-\frac{\omega^2_c}{\omega^2})^{-1} \\
+	(\omega^2 - c^2k^2)E_y & = \omega^2_{pe}\qty(E_y +i\frac{\omega_c}{\omega}E_x)\qty(1-\frac{\omega^2_c}{\omega^2})^{-1}
+\end{align}
+となる。ここで、$\alpha = \frac{\omega^2_{pe}}{1-\omega^2_c/\omega^2}$と置くと
+\begin{align}
+	(\omega^2 - c^2k^2 - \alpha)E_x + i\alpha\frac{\omega_{c}}{\omega}E_y & =0 \\
+	-i\alpha\frac{\omega_{c}}{\omega}E_x + (\omega^2-c^2k^2-\alpha)E_y    & =0
+\end{align}
+と整理できる。行列式が$0$の条件から、
+\begin{equation}
+	(\omega^2-c^2k^2-\alpha)^2 = \qty(\frac{\alpha\omega_{c}}{\omega})^2 \iff (\omega^2-c^2k^2-\alpha) = \pm\frac{\alpha\omega_{c}}{\omega}
+\end{equation}
+と2つの解が出てくる。したがって、
+\begin{equation}
+	\omega^2-c^2k^2 = \alpha\qty(1\pm\frac{\omega_{c}}{\omega}) = \frac{\omega_{pe}^2}{1-(\omega_c/\omega)^2}\qty(1\pm\frac{\omega_{c}}{\omega})
+	= \frac{\omega_{pe}^2}{1\mp(\omega_c/\omega)^2}
+\end{equation}
+と計算できる。分散関係は以下のようになる：
+\begin{equation}N^2 = \frac{c^2k^2}{\omega^2}=
+	\begin{dcases}
+		1-\frac{\omega^2_{pe}/\omega^2}{1-(\omega_c/\omega)^2} \quad\text{（R波）}\;, \\
+		1-\frac{\omega^2_{pe}/\omega^2}{1+(\omega_c/\omega)^2} \quad\text{（L波）}\;。
+	\end{dcases}
+\end{equation}
+R波とL波はそれぞれ右回り、左回り円偏光を表す。外部磁場が存在する場合の横波についてまとめると、
+\begin{itemize}
+	\item $\bm{B}_0 \varParallel \bm{k}$：平面偏光波である正常波（$\bm{B_0}\varParallel\bm{E}_1$）と楕円偏光波である異常波（$\bm{B_0}\perp\bm{E}_1$）
+	\item $\bm{B}_0 \perp \bm{k}$：右回り円偏光の$R$波と左回り円偏光の$L$波の重ね合わせ
+\end{itemize}
+となる。
+\subsubsection{$L$波と$R$波が円偏光を成すことの証明}
+
+\section{遮断周波数と共鳴周波数}
+\begin{itemize}
+	\item 遮断(cutoff)周波数とは、プラズマ中の屈折率$N$が$N=ck/\omega=0$となるときの周波数である。
+	      \begin{itemize}
+		      \item 波数$k=0$に対応し、波がプラズマ表面で反射されることを表す。
+	      \end{itemize}
+	\item 共鳴(resonance)周波数とは、プラズマ波の位相速度$v_{\phi}$が$v_{\phi}=\omega/k=0$となるときの周波数である。
+	      \begin{itemize}
+		      \item 波長$\lambda=0$に対応し、波はプラズマ中に入ることができるが伝播せずに振動することを表す。
+		      \item 共鳴周波数の条件は$N\to\infty$と見ても良い。
+	      \end{itemize}
+\end{itemize}
+
+
+
+
+
 
 
 \end{document}
