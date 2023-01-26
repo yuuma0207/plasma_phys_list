@@ -38,12 +38,12 @@
 		            \begin{itemize}
 			            \item プラズマ周波数$\omega_P$を遮断周波数とした$\omega > \omega_P$の通常の電磁波
 		            \end{itemize}
-		      \item $\bm{B}_0 =0 \wedge \bm{k}\perp \bm{B}_0$
+		      \item $\bm{B}_0 \neq 0 \wedge \bm{k}\perp \bm{B}_0$
 		            \begin{itemize}
 			            \item $\bm{E}_1 \varParallel \bm{B}_0$：正常波（O波）
 			            \item $\bm{E}_1 \perp \bm{B}_0$：異常波（X波）
 		            \end{itemize}
-		      \item $\bm{B}_0 =0 \wedge \bm{k}\varParallel \bm{B}_0$
+		      \item $\bm{B}_0 \neq 0 \wedge \bm{k}\varParallel \bm{B}_0$
 		            \begin{itemize}
 			            \item L波とR波である円偏光の重ね合わせの電磁波
 		            \end{itemize}
@@ -646,8 +646,99 @@ $\bm{B}=\bm{0}$のときの横波であるため、$\bm{j}_1$をプラズマ電�
 		      \item 地上での通信では電離層で反射させるために低周波帯域を用いる方が良い。
 	      \end{itemize}
 \end{itemize}
-\subsection{正常波}
-\subsection{異常波}
+\subsection{正常波：電場と背景磁場が平行な場合}
+次に、$\bm{B}_0$が存在する場合のときの電磁波の伝播を考える。最初に$\bm{k}\perp\bm{B}_0$の波動について考察する。
+この場合、$\bm{E}_1\varParallel \bm{B}_0$と$\bm{E}_1\perp \bm{B}_0$の2通りの自由度が存在する。正常波（O波）は前者の場合であるため、
+$\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{z}},\,\bm{k} = k\hat{\bm{x}}$と書ける。波が従う方程式は磁場のない場合と同じであり、
+\begin{equation}
+	(\omega^2-c^2k^2)\bm{E}_1 = -4\pi{}i\omega{}\bm{j}_1 = 4\pi{}in_0e\omega\bm{v}_{e1}
+\end{equation}
+である。$\bm{E}_1 \propto\hat{\bm{z}}$であるため、電子速度の$z$成分について考えれば良い。$z$方向の電子の運動方程式は
+\begin{equation}
+	m\pdv{v_{1z}}{t} = -eE_{1z}
+\end{equation}
+であり、磁場によるLorentz力は働かない。したがって、
+\begin{equation}
+	(\omega^2 - c^2k^2)E_{1z} = 4\pi{}in_0e\omega\frac{eE_{1z}}{im\omega} = \omega^2_pE_{1z}
+\end{equation}
+を得る。これは$\bm{B}_0 = \bm{0}$の場合の電磁波と全く同じ分散関係であり、そのために正常波と呼ばれる。
+
+\subsection{異常波：電場と背景磁場が垂直な場合}
+次に、$\bm{E}_1\perp\bm{B}_0$の波動を考える。この場合、電子の運動は背景磁場によるLorentz力が働くため、分散関係が変化する。
+座標軸は$\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{y}},\,\bm{k} = k\hat{\bm{x}}$と取る。
+しかし、実際にはLorentz力により電子の運動は$\hat{\bm{x}}$方向にも生じる。そのため、厳密な横波を形成することができず、縦波成分も存在する。
+このことを考慮するために、$\bm{E}_1 = E_x\hat{\bm{x}} + E_y\hat{\bm{y}}$として取り扱う必要がある。
+このとき、モード解析によって線形化した電子の運動方程式は
+\begin{equation}
+	-im\omega\bm{v}_{e1} = -e\qty(\bm{E}_1 + \bm{v}_{e1}\cross\bm{B}_0)
+\end{equation}
+となる。$x,\,y$成分について書き下すと、
+\begin{align}
+	v_x & = \frac{-ie}{m\omega}\qty(E_x + v_yB_0) \\
+	v_y & = \frac{-ie}{m\omega}\qty(E_y - v_xB_0)
+\end{align}
+となる。これを解くと
+\begin{equation}
+	\begin{dcases}
+		v_x & = \frac{e}{m\omega}\qty(-iE_x -\frac{\omega_c}{\omega}E_y + \frac{\omega_cB_0}{\omega}v_x)  \\
+		v_y & = \frac{e}{m\omega}\qty(-iE_y + \frac{\omega_c}{\omega}E_x - \frac{\omega_cB_0}{\omega}v_y)
+	\end{dcases}\implies
+	\begin{dcases}
+		v_x & = \frac{e}{m\omega}\qty(-iE_x - \frac{\omega_c}{\omega}E_y)\qty(1-\frac{\omega^2_c}{\omega^2})^{-1} \\
+		v_y & = \frac{e}{m\omega}\qty(-iE_y + \frac{\omega_c}{\omega}E_x)\qty(1-\frac{\omega^2_c}{\omega^2})^{-1}
+	\end{dcases}
+\end{equation}
+となる。また、波の方程式は$\div{\bm{E}_1} = i\bm{k}\vdot\bm{E}_1 = ikE_x$であり、$\grad{ikE_x} = ik\grad{E_x} = -kE_x\bm{k}$となることから、
+\begin{equation}
+	(\omega^2 - c^2k^2)\bm{E}_1 + c^2kE_x\bm{k} = -4\pi{}i\omega\bm{j}_1 = 4\pi{}in_0\omega{}e\bm{v}_{e1}
+\end{equation}
+となる。これを成分にわけて$v_x,\,v_y$の表式を代入すると、
+\begin{align}
+	\omega^2E_x            & = -4\pi{}in_0\omega{}e\frac{e}{m\omega}\qty(iE_x + \frac{\omega_c}{\omega}E_y)\qty(1-\frac{\omega^2_c}{\omega^2})^{-1} \\
+	(\omega^2 - c^2k^2)E_y & = -4\pi{}in_0\omega{}e\frac{e}{m\omega}\qty(iE_y- \frac{\omega_c}{\omega}E_x)\qty(1-\frac{\omega^2_c}{\omega^2})^{-1}
+\end{align}
+となる。$\omega^2_{ep} = 4\pi{}n_0e^2/m$を用いて変形すると、
+\begin{align}
+	\qty[\omega^2\qty(1-\frac{\omega_c^2}{\omega^2}) - \omega^2_{pe}]E_x + i\frac{\omega^2_{pe}\omega_c}{\omega}E_y            & = 0 \\
+	-i\frac{\omega^2_{pe}\omega_c}{\omega}E_x +\qty[(\omega^2 - c^2k^2)\qty(1-\frac{\omega^2_c}{\omega^2}) - \omega^2_{pe}]E_y & = 0
+\end{align}
+つまり、
+\begin{equation}
+	\begin{pmatrix}
+		\omega^2\qty(1-{\omega_c^2}/{\omega^2}) - \omega^2_{pe} & i{\omega^2_{pe}\omega_c}/{\omega}                                  \\
+		-i{\omega^2_{pe}\omega_c}/{\omega}                      & (\omega^2 - c^2k^2)\qty(1-{\omega^2_c}/{\omega^2}) - \omega^2_{pe}
+	\end{pmatrix}
+	\begin{pmatrix}
+		E_x \\ E_y
+	\end{pmatrix} = 0
+\end{equation}
+となる。$\bm{E}\neq\bm{0}$より行列式を解くと、$\omega_{\text{UH}} = \omega^2_c + \omega^2_{pe}$を用いると、
+\begin{equation}
+	\begin{vmatrix}
+		\omega^2 - \omega^2_{\text{UH}}    & i{\omega^2_{pe}\omega_c}/{\omega}                                       \\
+		-i{\omega^2_{pe}\omega_c}/{\omega} & \omega^2 - \omega^2_{\text{UH}} - c^2k^2\qty(1-{\omega^2_c}/{\omega^2})
+	\end{vmatrix} = 0
+\end{equation}
+を解くことになり、
+\begin{equation}
+	(\omega^2-\omega^2_{\text{UH}})\qty[\omega^2-\omega^2_{\text{UH}} - c^2k^2\qty(1-\frac{\omega^2_c}{\omega^2})] = \qty(\frac{\omega^2_{pe}\omega_c}{\omega})^2
+\end{equation}
+と変形できる。これは
+\begin{equation}
+	\frac{c^2k^2}{\omega^2}\qty(\omega^2-\omega^2_c) = \omega^2-\omega^2_{\text{UH}} - \frac{(\omega^2_{pe}\omega_c/\omega)^2}{\omega^2-\omega^2_{\text{UH}}}
+\end{equation}
+となる。位相速度$v_{\phi}$を用いると$c^2k^2/\omega^2 = c^2/v^2_{\phi}$となることから、分散関係は
+\begin{equation}
+	\frac{c^2}{v^2_{\phi}} = \frac{\omega^2-\omega^2_{\text{UH}} - (\omega^2_{pe}\omega_c/\omega)^2}{\omega^2-\omega^2_c}
+\end{equation}
+となる。ここで、$\omega^2_{\text{UH}} = \omega^2_{pe} + \omega^2_c$と戻すと
+\begin{equation}
+	\frac{c^2}{v^2_{\phi}} = \frac{\omega^2 - \omega^2_{pe} - \omega^2_c - \omega^4_{pe}\omega^2_c/\omega^2}{\omega^2-\omega^2_c}
+	= 1-\frac{\omega^2_{pe}\qty(1 + \omega^2\omega)}{\omega^2-\omega^2_c}
+\end{equation}
+
+
+
 \subsection{外部磁場と波数ベクトルが平行な場合}
 
 
