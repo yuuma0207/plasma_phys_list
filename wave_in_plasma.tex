@@ -586,7 +586,19 @@ $\bm{v}_{e1} = v_1\hat{\bm{x}},\,\bm{E}_1 = E_1\hat{\bm{x}}$として解くと�
 
 \subsection{低域混成振動：厳密に垂直なイオン音波}
 次に、厳密に$\theta=\SI{90}{deg}$であるときのイオン音波を考える。このとき、電子の密度分布はBoltzmann分布を形成できず、イオンと同じ運動を行う。
-すなわち、イオンの結果において$e\to{}-e,\,M\to{}m,\,\Omega_c\to{}-\omega_c$と置き換えるだけで良い。
+すなわち、イオンの結果において$e\to{}-e,\,M\to{}m,\,\Omega_c\to{}-\omega_c$と置き換えるだけで良い。そのため、
+\begin{equation}
+	v_{ex} = -\frac{ek}{\omega{}m}\phi_1\qty(1-\frac{\omega_c^2}{\omega^2})^{-1},\,n_{e1} = n_0\frac{k}{\omega}v_{e1}
+\end{equation}
+が成立する。プラズマ近似が成立しているため、$n_{i1} = n_{e1}\iff v_{i1} = v_{e1}$とすると、
+\begin{equation}
+	M\qty(1-\frac{\Omega^2_c}{\omega^2}) = -m\qty(1 - \frac{\omega^2_c}{\omega^2}) \implies \omega^2(M+m) = m\omega^2_c + M\Omega^2_c = e^2B^2\qty(\frac{1}{m} + \frac{1}{M})
+\end{equation}
+となる。したがって、
+\begin{equation}
+	\omega^2 = \frac{e^2B^2}{Mm} = \Omega_c\omega_c \iff \omega = \qty(\Omega_c\omega_c)^{1/2}\eqqcolon \omega_1
+\end{equation}
+と分散関係が求まり、$\omega_1$を低域混成周波数と呼ぶ。これは$\theta=\pi/2$が正確に成立している際の静電イオン振動の周波数である。
 
 \newpage
 \section{横波}
