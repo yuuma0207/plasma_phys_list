@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  27 JAN 2023 13:52
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  27 JAN 2023 15:43
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1253,46 +1253,46 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 
 ] [2]
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 57.
+(Font)              scaled to size 11.09619pt on input line 59.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 57.
+(Font)              scaled to size 11.09619pt on input line 59.
 [3]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 69.
+(Font)              scaled to size 6.47278pt on input line 71.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 69.
+(Font)              scaled to size 4.62341pt on input line 71.
 [4]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 131.
+(Font)              scaled to size 7.39746pt on input line 133.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 131.
+(Font)              scaled to size 5.5481pt on input line 133.
 [5] [6]
 File: ./pic//entyuu_plasma.png Graphic file (type bmp)
 <./pic//entyuu_plasma.png>
 [7] [8] [9]
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 397.
+(Font)              scaled to size 7.39746pt on input line 399.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 397.
+(Font)              scaled to size 7.39746pt on input line 399.
 [10] [11] [12] [13]
 File: ./pic//hobo90.png Graphic file (type bmp)
 <./pic//hobo90.png>
 [14] [15] [16] [17] [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 874.
+(hyperref)                removing `math shift' on input line 876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 874.
+(hyperref)                removing `math shift' on input line 876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 874.
+(hyperref)                removing `math shift' on input line 876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 874.
+(hyperref)                removing `math shift' on input line 876.
 
 [20] [21] (out/wave_in_plasma.aux)
 Package rerunfilecheck Info: File `wave_in_plasma.out' has not changed.
@@ -1307,4 +1307,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  89i,19n,83p,482b,1260s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/wave_in_plasma.dvi (21 pages, 134612 bytes).
+Output written on out/wave_in_plasma.dvi (21 pages, 135556 bytes).
