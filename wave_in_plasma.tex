@@ -754,8 +754,8 @@ $\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{z}},\,\bm{k} = k\hat{\bm{x}
 \end{align}
 となる。ここで、$\alpha = \frac{\omega^2_{pe}}{1-\omega^2_c/\omega^2}$と置くと
 \begin{align}
-	(\omega^2 - c^2k^2 - \alpha)E_x + i\alpha\frac{\omega_{c}}{\omega}E_y & =0 \\
-	-i\alpha\frac{\omega_{c}}{\omega}E_x + (\omega^2-c^2k^2-\alpha)E_y    & =0
+	(\omega^2 - c^2k^2 - \alpha)E_x + i\alpha\frac{\omega_{c}}{\omega}E_y & =0 \label{eq:LR1} \\
+	-i\alpha\frac{\omega_{c}}{\omega}E_x + (\omega^2-c^2k^2-\alpha)E_y    & =0 \label{eq:LR2}
 \end{align}
 と整理できる。行列式が$0$の条件から、
 \begin{equation}
@@ -780,6 +780,50 @@ R波とL波はそれぞれ右回り、左回り円偏光を表す。外部磁場
 \end{itemize}
 となる。
 \subsubsection{$L$波と$R$波が円偏光を成すことの証明}
+式\eqref{eq:LR2}に$i$をかけて式\eqref{eq:LR1}に加えると、
+\begin{equation}
+	\qty(\omega^2-c^2k^2-\alpha)\qty(E_x+iE_y) + \alpha\frac{\omega_c}{\omega}\qty(E_x + iE_y) = 0
+\end{equation}
+となる。式\eqref{eq:LR2}に$-i$をかけて式\eqref{eq:LR1}に加えると、
+\begin{equation}
+	\qty(\omega^2-c^2k^2-\alpha)\qty(E_x-iE_y) - \alpha\frac{\omega_c}{\omega}\qty(E_x - iE_y) = 0
+\end{equation}
+となる。したがって、L波とR波の分散関係を求める式は
+\begin{equation}
+	\begin{dcases}
+		F(\omega)\qty(E_x+iE_y)=0,\wedge{}G(\omega)\qty(E_x-iE_y)=0       \\
+		F(\omega) = \omega^2-c^2k^2-\alpha\qty(1-\frac{\omega_c}{\omega}) \\
+		G(\omega) = \omega^2-c^2k^2 - \alpha\qty(1+\frac{\omega_c}{\omega})
+	\end{dcases}
+\end{equation}
+と変形できる。ここで、L波は$F(\omega)=0$が成立するときであり、R波は$G(\omega)=0$が成立するときの波である。
+すなわち、L波の電場は
+\begin{equation}
+	E_x - iE_y=0
+\end{equation}
+が成立している。つまり、$E_x \propto e^{-i\omega{}t},\,E_y \propto e^{-i(\omega{}t + \pi/2)}$とおくことができる。
+これは、$E_y$が$E_x$より位相が$\pi/2$だけ進んでいることを意味している。$z$軸正方向から$xy$平面を見ると、$z=0$の波面は右回転していることがわかる。波動が進む方向は$z$軸正方向であるため、L波は左円偏光を表す波動である。
+\begin{table}[H]
+	\centering
+	\caption{$E_x$と$E_y$の時間経過}
+	\begin{tabular}{ccc}
+		\toprule
+		$\omega{}t$ & $E_x$ & $E_y$ \\
+		\midrule
+		$0$         & 1     & 0     \\
+		$T/4$       & 0     & -1    \\
+		$T/2$       & -1    & 0     \\
+		$3T/4$      & 0     & 1     \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:my_label}
+\end{table}
+
+
+
+
+
+
 
 \newpage
 \section{遮断周波数と共鳴周波数}
