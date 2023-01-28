@@ -769,52 +769,15 @@ $\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{z}},\,\bm{k} = k\hat{\bm{x}
 と求まる。
 
 \newpage
-\subsection{Alfven波：背景磁場と平行な方向に進行する低周波イオン電磁波}
-$\bm{B}_0,\,\bm{k}\propto \hat{\bm{z}},\quad\bm{E}_1,\,\bm{j}_1\propto\hat{\bm{x}}$と置く。このとき、必然的に$\bm{B}_1\propto\hat{\bm{y}}$となる。
-Maxwell方程式\eqref{eq:Maxwell}の単一モード解析により
-\begin{equation}
-	c^2k^2\bm{E}_1 = \omega^2\bm{E}_1 + 4\pi{}i\omega\bm{j}_1\iff \qty(\omega^2-c^2k^2)\bm{E}_1 = -4\pi{}i\omega\bm{j}_{1}
-\end{equation}
-となる。低周波の電磁波を考えているため、高周波振動では無視していたイオンの運動も考慮する。（プラズマ近似$n_{e} = n_{i} = n$が成立しているということ。）そのため、1次の摂動で
-\begin{equation}
-	\qty(\omega^2-c^2k^2)\bm{E}_1 = -4\pi{}i\omega{}n_{0}e\qty(\bm{v}_{i1}-\bm{v}_{e1})
-\end{equation}
-と置くことができる。$\bm{v}_{i1},\,\bm{v}_{e1}$の表式を得るために、イオンの運動方程式を線形化すると
-\begin{equation}
-	M\pdv{\bm{v}_{i1}}{t} = e\bm{E}_1 + e\bm{v}_{\bm{1}}\cross\bm{B}_0 \implies
-	-iM\omega\bm{v}_{i1} = e\bm{E}_1 + e\bm{v}_1\cross\bm{B}_0
-\end{equation}
-となる。運動方程式の各成分は
-\begin{equation}
-	v_{ix} = \frac{ie}{M\omega}E_{1x} + ev_{iy}B_0 ,\quad v_{iy} = -\frac{ie}{M\omega}v_{ix}B_0
-\end{equation}
-となり、これを解くと
-\begin{equation}
-	v_{ix}  = \frac{ie}{M\omega}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}E_{1x} ,\quad
-	v_{iy}  = \frac{e}{M\omega}\frac{\Omega_c}{\omega}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}E_{1x}
-\end{equation}
-となる。電子に対しても同様の運動方程式が成立し、$M\to{}m,\,e\to{}-e,\,\Omega_c\to\omega_c$として$\omega_c\gg\omega$の極限を取ることで結果を得られる：
-\begin{align}
-	v_{ex} & = -\frac{ie}{m\omega}\qty(1-\frac{\omega^2_c}{\omega^2})^{-1}E_{1x} \approx \frac{ie}{m\omega}\frac{\omega^2}{\omega^2_c}E_{1x} \to 0\;, \\
-	v_{ey} & = \frac{e}{m\omega}\frac{\omega_c}{\omega}\qty(1-\frac{\omega^2_c}{\omega^2})^{-1}E_{1x}
-	\approx -\frac{e}{m\omega}\frac{\omega_c}{\omega}\frac{\omega^2}{\omega^2_c}E_{1x} = -\frac{eE_{1x}}{m\omega_c} = -\frac{E_{1x}}{B_0}\;。
-\end{align}
-この極限では電子のLarmor回転は無視することができ、$y$方向に$\bm{E}\cross\bm{B}$ドリフトすることになる。$\bm{v}_{ix},\,\bm{v}_{ex}(=0)$をMaxwell方程式に代入して、
-\begin{equation}
-	\qty(\omega^2 - c^2k^2)E_{1x} = -4\pi{}i\omega{}n_0e\frac{ie}{M\omega}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}E_{1x}
-\end{equation}
-を得る。イオンプラズマ周波数$\Omega_{p}$を用いると、分散関係は
-\begin{equation}
-	\omega^2 - c^2k^2 = \Omega^2_{p}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}
-\end{equation}
-となる。さらに、Alfven波はイオンサイクロトロン共鳴よりも十分低い周波数を持つ波である。したがって$\omega \ll \Omega_c$が成立し、
-\begin{equation}
-	\omega^2 - c^2k^2 = -\Omega^2_{p}\frac{\omega^2}{\Omega_c^2}\iff \qty(1+\frac{4\pi{}n_0e^2}{M}\qty(\frac{eB_0}{M})^{-2})\omega^2 = c^2k^2
-	\iff \qty(1+\frac{4\pi\rho}{B_0^2})\omega^2 = c^2k^2
-\end{equation}
-となる。ここで、$\rho$はイオンの質量密度$n_0M$である。
 
-\subsection{外部磁場と波数ベクトルが平行な場合}
+\subsection{磁気音波：背景磁場と垂直な方向に進行する低周波電磁波（修正されたAlfven波）}
+$\bm{B}_0$を横切って伝播する低周波の電磁波を考える。$\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{x}}$と置くと、必然的に$\bm{k} = k\hat{\bm{y}}$と置くことになる。
+すなわち、電子の$\bm{E}_1\cross\bm{B}_0$ドリフトが$\bm{k}$方向に生じるため、プラズマの圧縮や膨張が存在する電磁波となる。すなわち、運動方程式に$\grad{P}$の項を入れないといけない。
+なお、プラズマ近似が成立しているため、イオンに対しても圧縮や膨張が存在することに注意する。
+
+
+
+\subsection{外部磁場と波数ベクトルが平行な場合の電子波}
 次に、$\bm{B}_0=B_0\hat{\bm{z}},\,\bm{k} = k\hat{\bm{z}},\,\bm{E}_1 = E_x\hat{\bm{x}} + E_y\hat{\bm{y}}$とする。
 このとき、異常波の方程式において$\bm{k}$を変更すれば良いだけであり、式\eqref{eq:ijouha}を参考にして、
 \begin{align}
@@ -888,10 +851,59 @@ R波とL波はそれぞれ右回り、左回り円偏光を表す。外部磁場
 	\label{tab:my_label}
 \end{table}
 
-
-
-
-
+\subsection{Alfven波：背景磁場と平行な方向に進行する低周波電磁波（シアーAlfven波）}
+$\bm{B}_0,\,\bm{k}\propto \hat{\bm{z}},\quad\bm{E}_1,\,\bm{j}_1\propto\hat{\bm{x}}$と置く。このとき、必然的に$\bm{B}_1\propto\hat{\bm{y}}$となる。
+Maxwell方程式\eqref{eq:Maxwell}の単一モード解析により
+\begin{equation}
+	c^2k^2\bm{E}_1 = \omega^2\bm{E}_1 + 4\pi{}i\omega\bm{j}_1\iff \qty(\omega^2-c^2k^2)\bm{E}_1 = -4\pi{}i\omega\bm{j}_{1}
+\end{equation}
+となる。低周波の電磁波を考えているため、高周波振動では無視していたイオンの運動も考慮する。（プラズマ近似$n_{e} = n_{i} = n$が成立しているということ。）そのため、1次の摂動で
+\begin{equation}
+	\qty(\omega^2-c^2k^2)\bm{E}_1 = -4\pi{}i\omega{}n_{0}e\qty(\bm{v}_{i1}-\bm{v}_{e1})
+\end{equation}
+と置くことができる。$\bm{v}_{i1},\,\bm{v}_{e1}$の表式を得るために、イオンの運動方程式を線形化すると
+\begin{equation}
+	M\pdv{\bm{v}_{i1}}{t} = e\bm{E}_1 + e\bm{v}_{\bm{1}}\cross\bm{B}_0 \implies
+	-iM\omega\bm{v}_{i1} = e\bm{E}_1 + e\bm{v}_1\cross\bm{B}_0
+\end{equation}
+となる。運動方程式の各成分は
+\begin{equation}
+	v_{ix} = \frac{ie}{M\omega}E_{1x} + ev_{iy}B_0 ,\quad v_{iy} = -\frac{ie}{M\omega}v_{ix}B_0
+\end{equation}
+となり、これを解くと
+\begin{equation}
+	v_{ix}  = \frac{ie}{M\omega}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}E_{1x} ,\quad
+	v_{iy}  = \frac{e}{M\omega}\frac{\Omega_c}{\omega}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}E_{1x}
+\end{equation}
+となる。電子に対しても同様の運動方程式が成立し、$M\to{}m,\,e\to{}-e,\,\Omega_c\to\omega_c$として$\omega_c\gg\omega$の極限を取ることで結果を得られる：
+\begin{align}
+	v_{ex} & = -\frac{ie}{m\omega}\qty(1-\frac{\omega^2_c}{\omega^2})^{-1}E_{1x} \approx \frac{ie}{m\omega}\frac{\omega^2}{\omega^2_c}E_{1x} \to 0\;, \\
+	v_{ey} & = \frac{e}{m\omega}\frac{\omega_c}{\omega}\qty(1-\frac{\omega^2_c}{\omega^2})^{-1}E_{1x}
+	\approx -\frac{e}{m\omega}\frac{\omega_c}{\omega}\frac{\omega^2}{\omega^2_c}E_{1x} = -\frac{eE_{1x}}{m\omega_c} = -\frac{E_{1x}}{B_0}\;。
+\end{align}
+この極限では電子のLarmor回転は無視することができ、$y$方向に$\bm{E}\cross\bm{B}$ドリフトすることになる。$\bm{v}_{ix},\,\bm{v}_{ex}(=0)$をMaxwell方程式に代入して、
+\begin{equation}
+	\qty(\omega^2 - c^2k^2)E_{1x} = -4\pi{}i\omega{}n_0e\frac{ie}{M\omega}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}E_{1x}
+\end{equation}
+を得る。イオンプラズマ周波数$\Omega_{p}$を用いると、分散関係は
+\begin{equation}
+	\omega^2 - c^2k^2 = \Omega^2_{p}\qty(1-\frac{\Omega^2_c}{\omega^2})^{-1}
+\end{equation}
+となる。さらに、Alfven波はイオンサイクロトロン共鳴よりも十分低い周波数を持つ波である。したがって$\omega \ll \Omega_c$が成立し、
+\begin{equation}
+	\omega^2 - c^2k^2 = -\Omega^2_{p}\frac{\omega^2}{\Omega_c^2}\iff \qty(1+\frac{4\pi{}n_0e^2}{M}\qty(\frac{eB_0}{M})^{-2})\omega^2 = c^2k^2
+	\iff \qty(1+\frac{4\pi\rho}{B_0^2})\omega^2 = c^2k^2
+\end{equation}
+となる。ここで、$\rho$はイオンの質量密度$n_0M$である。また、位相速度$v_{\phi}$をプラズマの比誘電率$\epsilon_r\gg 1$と比透磁率$\mu_r=1$を用いた表式で比較すると以下のようになる；
+\begin{equation}
+	\frac{\omega^2}{k^2} = \frac{c^2}{1+(4\pi\rho)/B_0^2},\quad v_{\phi}^2 = \frac{1}{\epsilon\mu} = \frac{c^2}{\epsilon_r\mu_r}
+	\implies \epsilon_r = 1+\frac{4\pi\rho}{B_0^2} \gg 1\;。
+\end{equation}
+したがって、近似的に位相速度は
+\begin{equation}
+	\frac{\omega}{k} = v_{\phi} = \frac{cB_0}{(4\pi\rho)^{1/2}} \eqqcolon v_{\text{A}}
+\end{equation}
+と書ける。ここで、$v_{\text{A}}$をAlfven速度と呼び、一定速度で$\bm{B}_0$に沿った伝播をする。
 
 
 \newpage
@@ -955,8 +967,6 @@ L波については共鳴周波数が存在しない。直感的には、L波の
 実際にイオンの運動を考慮して方程式を解くと、共鳴周波数はイオンサイクロトロン周波数$\omega=\Omega_c$で共鳴周波数を持つ。
 カットオフ周波数は$\omega=\omega_L$である。
 
-\section{磁場のある場合の低周波イオン振動}
-背景磁場が存在する場合のイオン波の横波成分をAlfven波と磁気音波と呼ぶ。前者は$\bm{B}_0\varParallel\bm{k}$であり、後者は$\bm{B}_0\perp\bm{k}$である。
 
 \section{まとめ}
 
