@@ -57,7 +57,7 @@
 		            \begin{itemize}
 			            \item $\bm{E}_1 \varParallel \bm{B}_0$：正常波（O波）
 			            \item $\bm{E}_1 \perp \bm{B}_0$：異常波（X波）
-			            \item 磁気音波（低周波のイオン電磁波）
+			            \item 磁気音波（低周波のイオン電磁波、修正されたAlfven波）
 		            \end{itemize}
 		      \item $\bm{B}_0 \neq 0 \wedge \bm{k}\varParallel \bm{B}_0$
 		            \begin{itemize}
@@ -794,28 +794,45 @@ $\bm{B}_0$を横切って伝播する低周波の電磁波を考える。$\bm{B}
 となる。したがって、
 \begin{equation}
 	v_{ix} = \frac{ie}{M\omega}E_{1x} + \frac{i\Omega_c}{\omega}\qty(-\frac{i\Omega_c}{\omega})(1-A_i)^{-1}v_{ix} \implies v_{ix}
-	= \frac{ie}{M\omega}E_{ix}\qty(1-\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_i})^{-1}
+	= \frac{ie}{M\omega}E_{1x}\qty(1-\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_i})^{-1}
 \end{equation}
 を得る。また、$\omega \ll \Omega_c$を仮定すると、
 \begin{equation}
-	v_{ix} \approx -\frac{ie}{M\omega}E_{ix}\qty(\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_i})^{-1}
-	= -\frac{ie}{M\omega}E_{ix}\frac{\omega^2}{\Omega_c^2}\qty(1-\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M})
+	v_{ix} \approx -\frac{ie}{M\omega}E_{1x}\qty(\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_i})^{-1}
+	= -\frac{ie}{M\omega}E_{1x}\frac{\omega^2}{\Omega_c^2}\qty(1-\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M})
 \end{equation}
 と計算できる。電子についても同様の運動方程式が成立する。また、電子の熱速度が波の位相速度より十分に早いと仮定する：
 \begin{equation}
 	\frac{\omega^2}{k^2} \ll v_{\text{th}}^2 \approx k_{\text{B}}T_i\;。
 \end{equation}
-すなわち、
+すなわち、プラズマ中の電子の速度は
+\begin{align}
+	v_{ex} & \approx \frac{ie}{m\omega}E_{1x}\qty(\frac{\omega^2_c}{\omega^2}\frac{1}{1-A_e})^{-1}
+	= \frac{ie}{m\omega}E_{1x}\frac{\omega^2}{\omega_c^2}\qty(1-\frac{k^2}{\omega^2}\frac{\gamma_ek_{\text{B}}T_e}{m})                                                                               \\
+	       & \approx -\frac{ie}{m\omega}E_{1x}\frac{\omega^2m^2}{e^2B_0^2}\frac{k^2}{\omega^2}\frac{\gamma_ek_{\text{B}}T_e}{m} = -\frac{ik^2}{\omega{}B_0^2}\frac{\gamma_ek_{\text{B}}T_e}{e}E_{1x}
+\end{align}
+となる。したがって、Maxwell方程式は
 \begin{equation}
-	v_{ex} \approx \frac{ie}{m\omega}E_{ix}\qty(\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_e})^{-1}
-	= \frac{ie}{m\omega}E_{ix}\frac{\omega^2}{\Omega_c^2}\qty(1-\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M})
+	(\omega^2 - c^2k^2)E_{1x} = -4\pi{}in_0e\omega(v_{ix}-v_{ex})
+	= -\frac{4\pi{}n_0e^2}{M}\frac{\omega^2}{\Omega^2_c}\qty(1-\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M})E_{1x} + \frac{4\pi{}n_0}{B_0^2}k^2\gamma_ek_{\text{B}}T_eE_{1x}
 \end{equation}
-
+と計算できる。ここで、$v_{\text{A}}^2 = c^2B_0^2/(4\pi{}n_0M)$とすると、
 \begin{equation}
-	\approx \frac{ie}{M\omega}E_x\frac{\omega^2M^2}{e^2B_0^2}\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M} = \frac{ik^2}{\omega{}B_0^2}\frac{\gamma_ik_{\text{B}}T_i}{e}E_x
+	\Omega_{p}^2/\Omega_c^2 = \frac{4\pi{}n_0e^2}{M}\qty(\frac{e^2B_0^2}{M^2})^{-1} = \frac{4\pi{}n_0M}{B_0^2} = \frac{c^2}{v_{\text{A}}^2}
 \end{equation}
-
-
+となるため、
+\begin{equation}
+	\omega^2\qty(1+\frac{c^2}{v_{\text{A}}^2}) = c^2k^2\qty(1 + \frac{\gamma_ik_{\text{B}}T_i + \gamma_ek_{\text{B}}T_e}{Mv_{\text{A}}^2}) = c^2k^2\qty(1 + \frac{v_{\text{s}}^2}{v_{\text{A}}^2})
+\end{equation}
+を得る。したがって、
+\begin{equation}
+	\frac{\omega^2}{k^2} = c^2\frac{v_{\text{s}}^2 + v_{\text{A}}^2}{c^2+v_{\text{A}}^2}
+\end{equation}
+となる。$\bm{B}_0\to 0$の極限では$v_{\text{A}}\to 0$であるため、通常のイオン音波となり、$k_{\text{B}}T\to 0$の極限で$v_{\text{s}}\to 0$のとき、
+\begin{equation}
+	\frac{\omega^2}{k^2} \to \frac{c^2v_{\text{A}}^2}{c^2+v_{\text{A}}^2} = \frac{v_{\text{A}}^2}{1 + v_{\text{A}}^2/c^2}
+\end{equation}
+となり、修正されたAlfven波となる。
 
 
 \subsection{外部磁場と波数ベクトルが平行な場合の電子波}
@@ -849,10 +866,10 @@ $\bm{B}_0$を横切って伝播する低周波の電磁波を考える。$\bm{B}
 R波とL波はそれぞれ右回り、左回り円偏光を表す。外部磁場が存在する場合の横波についてまとめると、
 \begin{itemize}
 	\item $\bm{B}_0 \varParallel \bm{k}$：平面偏光波である正常波（$\bm{B_0}\varParallel\bm{E}_1$）と楕円偏光波である異常波（$\bm{B_0}\perp\bm{E}_1$）
-	\item $\bm{B}_0 \perp \bm{k}$：右回り円偏光の$R$波と左回り円偏光の$L$波の重ね合わせ
+	\item $\bm{B}_0 \perp \bm{k}$：右回り円偏光のR波と左回り円偏光のL波の重ね合わせ
 \end{itemize}
 となる。
-\subsubsection{$L$波と$R$波が円偏光を成すことの証明}
+\subsubsection{L波とR波が円偏光を成すことの証明}
 式\eqref{eq:LR2}に$i$をかけて式\eqref{eq:LR1}に加えると、
 \begin{equation}
 	\qty(\omega^2-c^2k^2-\alpha)\qty(E_x+iE_y) + \alpha\frac{\omega_c}{\omega}\qty(E_x + iE_y) = 0
@@ -947,7 +964,6 @@ Maxwell方程式\eqref{eq:Maxwell}の単一モード解析により
 と書ける。ここで、$v_{\text{A}}$をAlfven速度と呼び、一定速度で$\bm{B}_0$に沿った伝播をする。
 
 
-\newpage
 \section{遮断周波数と共鳴周波数}
 \begin{itemize}
 	\item 遮断(cutoff)周波数とは、プラズマ中の屈折率$N$が$N=ck/\omega=0$となるときの周波数である。
@@ -993,8 +1009,8 @@ Maxwell方程式\eqref{eq:Maxwell}の単一モード解析により
 \end{equation}
 となる。つまり、カットオフ周波数は$\omega = \omega_{pe}$で、共鳴周波数は存在しない。
 
-\subsection{$L$波と$R$波について}
-$L$波と$R$波の分散関係は
+\subsection{L波とR波について}
+L波とR波の分散関係は
 \begin{equation}N^2 = \frac{c^2k^2}{\omega^2}=
 	\begin{dcases}
 		1-\frac{\omega^2_{pe}/\omega^2}{1-(\omega_c/\omega)^2} \quad\text{（R波）} \\
@@ -1010,7 +1026,65 @@ L波については共鳴周波数が存在しない。直感的には、L波の
 
 
 \section{まとめ}
-
+\subsection{縦波（静電波）}
+\subsubsection*{電子波}
+\begin{itemize}
+	\item $\bm{B}_0$または$\bm{B}_0\varParallel \bm{k}$
+	      \begin{equation}
+		      \omega^2 = \omega_p^2 + \frac{3}{2}k^2v^2_{\text{th}}\quad\text{（プラズマ振動）}
+	      \end{equation}
+	\item $\bm{B}_0\perp\bm{k}$
+	      \begin{equation}
+		      \omega^2 = \omega^2_{c} + \omega^2_{p} = \omega^2_{\text{UH}}\quad\text{（高域混成振動）}
+	      \end{equation}
+\end{itemize}
+\subsubsection*{イオン波}
+\begin{itemize}
+	\item $\bm{B}_0=0$または$\bm{B}_0\varParallel \bm{k}$
+	      \begin{equation}
+		      \omega^2 = k^2v_{\text{s}}^2 = k^2\frac{\gamma_ik_{\text{B}}T_i + \gamma_ek_{\text{B}}T_e}{M}\quad\text{（イオン音波）}
+	      \end{equation}
+	\item $\bm{B}_0\perp\bm{k}$（厳密ではない）
+	      \begin{equation}
+		      \omega^2 = \Omega_c^2 + k^2v_{\text{s}}^2\quad\text{（静電イオンサイクロトロン波）}
+	      \end{equation}
+	\item $\bm{B}_0\perp\bm{k}$（厳密）
+	      \begin{equation}
+		      \omega^2 = \Omega_c\omega_c = \omega_{\text{LH}}\quad\text{（低域混成振動）}
+	      \end{equation}
+\end{itemize}
+\subsection{横波（電磁波）}
+\subsubsection*{電子波}
+\begin{itemize}
+	\item $\bm{B}_0=0$
+	      \begin{equation}
+		      \omega^2 = \omega_p^2 + c^2k^2\quad\text{（光波）}
+	      \end{equation}
+	\item $\bm{B}_0\perp\bm{k}\wedge\bm{B_0}\perp\bm{E}_1$
+	      \begin{equation}
+		      N^2 = 1-\frac{\omega^2_p}{\omega^2}\quad\text{（正常波、O波）}
+	      \end{equation}
+	\item $\bm{B}_0\perp\bm{k}\wedge\bm{B_0}\varParallel\bm{E}_1$
+	      \begin{equation}
+		      N^2 = 1 - \frac{\omega^2_p}{\omega^2}\frac{\omega^2-\omega^2_p}{\omega^2-\omega^2_{\text{UH}}}\quad\text{（異常波、X波）}
+	      \end{equation}
+	\item $\bm{B}_0\varParallel\bm{k}$
+	      \begin{equation}
+		      N^2 = 1-\frac{\omega^2_p/\omega^2}{1-\qty(\omega_c/\omega)}\quad\text{（R波）},\qquad 1-\frac{\omega^2_p/\omega^2}{1+\qty(\omega_c/\omega)}\quad\text{（L波）}
+	      \end{equation}
+\end{itemize}
+\subsubsection*{イオン波}
+\begin{itemize}
+	\item $\bm{B}_0=0$：なし
+	\item $\bm{B}_0\varParallel\bm{k}$
+	      \begin{equation}
+		      \omega^2 = k^2v_{\text{A}}^2\quad\text{（Alfven波）}
+	      \end{equation}
+	\item $\bm{B}_0\perp\bm{k}$
+	      \begin{equation}
+		      \omega^2 = c^2k^2\frac{v_{\text{s}}^2 + v_{\text{A}}^2}{c^2+v_{\text{A}}^2}\quad\text{（修正されたAlfven波）}
+	      \end{equation}
+\end{itemize}
 
 
 \end{document}
