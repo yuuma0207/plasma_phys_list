@@ -773,7 +773,48 @@ $\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{z}},\,\bm{k} = k\hat{\bm{x}
 \subsection{磁気音波：背景磁場と垂直な方向に進行する低周波電磁波（修正されたAlfven波）}
 $\bm{B}_0$を横切って伝播する低周波の電磁波を考える。$\bm{B}_0 = B_0\hat{\bm{z}},\,\bm{E}_1 = E_1\hat{\bm{x}}$と置くと、必然的に$\bm{k} = k\hat{\bm{y}}$と置くことになる。
 すなわち、電子の$\bm{E}_1\cross\bm{B}_0$ドリフトが$\bm{k}$方向に生じるため、プラズマの圧縮や膨張が存在する電磁波となる。すなわち、運動方程式に$\grad{P}$の項を入れないといけない。
-なお、プラズマ近似が成立しているため、イオンに対しても圧縮や膨張が存在することに注意する。
+したがって、イオンの運動方程式は
+\begin{equation}
+	M\pdv{\bm{v}_{i1}}{t} = e\qty(\bm{E}_1 + \bm{v}_{i1}\cross\bm{B}_0) - \grad{P},\,
+	\grad{P} = \gamma_ik_{\text{B}}T_i\frac{\grad{n_{i1}}}{n_{i0}}
+\end{equation}
+となる。（圧力項は同種粒子のみを考えるだけで良い。衝突が存在しない理想的なプラズマを想定しているため、異種粒子の運動量輸送は考えない。）運動方程式を線形化すると
+\begin{equation}
+	-iM\omega{}n_0\bm{v}_{i1} = en_0\qty(E_{1}+\bm{v}_{i1}\cross\bm{B}_0)-\gamma_i{}k_{\text{B}}T_ii\bm{k}n_{1}
+\end{equation}
+となるため、
+\begin{align}
+	v_{ix} & = \frac{ie}{M\omega}\qty(E_{1x} + v_{iy}B_0)                                                        \\
+	v_{iy} & = \frac{ie}{M\omega}(-v_{ix}B_0) + \frac{k}{\omega}\frac{\gamma_ik_{\text{B}}T_i}{M}\frac{n_1}{n_0}
+\end{align}
+を得る。連続の式は$n_1/n_0 = (k/\omega)v_{iy}$であるため、
+\begin{equation}
+	v_{iy} = \frac{ie}{M\omega}(-v_{ix}B_0) + \frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M}v_{iy} = \frac{ie}{M\omega}(-v_{ix}B_0) + A_iv_{iy}
+\end{equation}
+となる。したがって、
+\begin{equation}
+	v_{ix} = \frac{ie}{M\omega}E_{1x} + \frac{i\Omega_c}{\omega}\qty(-\frac{i\Omega_c}{\omega})(1-A_i)^{-1}v_{ix} \implies v_{ix}
+	= \frac{ie}{M\omega}E_{ix}\qty(1-\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_i})^{-1}
+\end{equation}
+を得る。また、$\omega \ll \Omega_c$を仮定すると、
+\begin{equation}
+	v_{ix} \approx -\frac{ie}{M\omega}E_{ix}\qty(\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_i})^{-1}
+	= -\frac{ie}{M\omega}E_{ix}\frac{\omega^2}{\Omega_c^2}\qty(1-\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M})
+\end{equation}
+と計算できる。電子についても同様の運動方程式が成立する。また、電子の熱速度が波の位相速度より十分に早いと仮定する：
+\begin{equation}
+	\frac{\omega^2}{k^2} \ll v_{\text{th}}^2 \approx k_{\text{B}}T_i\;。
+\end{equation}
+すなわち、
+\begin{equation}
+	v_{ex} \approx \frac{ie}{m\omega}E_{ix}\qty(\frac{\Omega^2_c}{\omega^2}\frac{1}{1-A_e})^{-1}
+	= \frac{ie}{m\omega}E_{ix}\frac{\omega^2}{\Omega_c^2}\qty(1-\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M})
+\end{equation}
+
+\begin{equation}
+	\approx \frac{ie}{M\omega}E_x\frac{\omega^2M^2}{e^2B_0^2}\frac{k^2}{\omega^2}\frac{\gamma_ik_{\text{B}}T_i}{M} = \frac{ik^2}{\omega{}B_0^2}\frac{\gamma_ik_{\text{B}}T_i}{e}E_x
+\end{equation}
+
 
 
 
