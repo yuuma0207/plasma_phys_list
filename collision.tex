@@ -1,0 +1,102 @@
+\input{~/macro.tex}
+\title{プラズマの衝突と拡散}
+\author{20B01392 松本侑真}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{プラズマの拡散現象：拡散係数と移動度、両極性拡散}
+粒子の拡散現象は、粒子間の衝突が強く関与する。
+まずは、高密度の中性原子を背景にした非一様なイオンや電子の分布をしているプラズマを考える。
+これは、初期の気体放電実験（電離度$10^{-3}\sim{}10^{-6}$）に該当する。荷電粒子の運動方程式は、衝突周波数$\nu = 1/\tau$を用いて
+\begin{equation}
+	mn\dv{\bm{v}}{t} = \pm{}ne\bm{E} - \grad{P}-mn\nu\bm{v}
+\end{equation}
+となる。ここで、衝突周波数が一定であることと、$\bm{v}$が十分小さいあるいは$\nu$が十分に大きい場合、すぐに定常状態になることが予想されるため、
+\begin{equation}
+	0 = \pm{}ne\bm{E} - \grad{P}-mn\nu\bm{v}
+\end{equation}
+とおける。すなわち、$\grad{P}/P = \grad{n}/n = k_{\text{B}}T\grad{n}/P$であることから、
+\begin{equation}
+	\bm{v} =\frac{\pm{}e}{m\nu}\bm{E} - \frac{k_{\text{B}}T}{m\nu}\frac{\grad{n}}{n} \eqqcolon \pm\mu\bm{E} - D\frac{\grad{n}}{n}
+\end{equation}
+と計算できる。ここで、$\mu$は移動度、$D$は拡散係数である。これらはEinsteinの関係式（実質的には$\nu$を消去した式）より
+\begin{equation}
+	\mu = \frac{qD}{k_{\text{B}}T}
+\end{equation}
+が成立している。
+また、粒子種$j$の粒子束$\Gamma_j$は
+\begin{equation}
+	\Gamma_j = n\bm{v}_j = \pm\mu_jn\bm{E} -D_j\grad{n}
+\end{equation}
+と表される。特に、電場が存在しない場合に成立する
+\begin{equation}
+	\Gamma_j = -D\grad{n}
+\end{equation}
+をFickの法則と呼ぶ。これは、衝突によって粒子密度が少ない方向へプラズマ全体を広げる効果を表し、乱歩過程で移動が行われる。
+\subsection{両極性拡散}
+プラズマ中の電子は早い熱運動によって素早く拡散されるが、その背後にイオンが取り残される。
+それにより生じる電場によって、単体で考えるよりも電子の拡散が遅くなりイオンの拡散が早くなる現象を両極性拡散と呼ぶ。
+
+定常状態のとき、電子とイオンの粒子束が等しいと置ける：
+\begin{equation}
+	\Gamma = \Gamma_i = \Gamma_e \iff \mu_in\bm{E} -D_i\grad{n} = -\mu_en\bm{E} -D_e\grad{n}\;。
+\end{equation}
+すなわち、定常状態における電子とイオン間の拡散電場は
+\begin{equation}
+	\bm{E} =\frac{D_i-D_e}{\mu_i+\mu_e}\frac{\grad{n}}{n}
+\end{equation}
+と求まる。これを再代入すると、
+\begin{equation}
+	\Gamma = n\mu_i\frac{D_i-D_e}{\mu_i+\mu_e}\frac{\grad{n}}{n} - D_i\grad{n} = -\frac{\mu_iD_e + \mu_eD_i}{\mu_i+\mu_e}\grad{n} \eqqcolon -D_a\grad{n}
+\end{equation}
+と計算できる。この式で定義される$D_a$を両極性拡散係数と呼ぶ。特に、電子の移動度はイオンの移動度よりも大きいため、$T_i=T_e$を仮定すると、
+\begin{equation}
+	D_a = \frac{\mu_i}{\mu_e}D_e + D_i = \frac{T_e}{T_i}D_i + D_i = 2D_i
+\end{equation}
+となる。したがって、プラズマ中での拡散は、イオン単体の拡散速度の$2$倍程度となる。
+
+\subsection{磁場を横切る拡散}
+磁場を横切る拡散について考える。荷電粒子は、粒子同士の衝突がなければ磁力線に沿ってサイクロトロン運動をし、横方向へ拡散することはない。
+しかし、粒子同士の衝突によって磁力線を横切って拡散する現象が生じる。ここでは、プラズマは等温で、定常状態になっていることを仮定する：
+\begin{equation}
+	0 = \pm{}e\qty(\bm{E} + \bm{v}\cross\bm{B}) -k_{\text{B}}T\grad{n}-mn\nu\bm{v}\;。
+\end{equation}
+これを解くと、
+\begin{align}
+	v_x & = \pm\mu{}E_x - \frac{D}{n}\pdv{n}{x}\pm\frac{\omega_c}{\nu}v_y \\
+	v_y & = \pm\mu{}E_y - \frac{D}{n}\pdv{n}{y}\mp\frac{\omega_c}{\nu}v_x
+\end{align}
+となる。したがって、
+\begin{align}
+	v_x(1+\omega_c^2\tau^2) & = \pm\mu{}E_x -\frac{D}{n}\pdv{n}{x} + \omega^2_c\tau^2\frac{E_y}{B} \mp \omega^2_c\tau^2\frac{k_{\text{B}}T}{eB}\frac{1}{n}\pdv{n}{y} \\
+	v_y(1+\omega_c^2\tau^2) & = \pm\mu{}E_y -\frac{D}{n}\pdv{n}{y} - \omega^2_c\tau^2\frac{E_y}{B} \pm \omega^2_c\tau^2\frac{k_{\text{B}}T}{eB}\frac{1}{n}\pdv{n}{x}
+\end{align}
+となる。ここで、それぞれ右辺第三項が$\bm{E}\cross\bm{B}$ドリフト、第四項が反磁性ドリフトになっている。
+また、磁場に垂直な方向の移動度と拡散係数は、
+\begin{equation}
+	\mu_{\perp} = \frac{\mu}{1+\omega^2_c\tau^2},\quad D_{\perp} = \frac{D}{1+\omega_c^2\tau^2}
+\end{equation}
+となる。すなわち、中性粒子の衝突によって、磁場に垂直な方向ではドリフト速度が低減し、移動度や拡散係数も同様に低減する。（減衰の係数はドリフトとは異なる。）
+また、$\omega^2_c\tau^2\gg 1$のとき、すなわち、サイクロトロン運動が衝突の緩和時間内に十分に生じているとき、磁場に垂直な拡散係数は
+\begin{equation}
+	D_{\perp} =\frac{D}{1+\omega^2_c\tau^2} \approx \frac{D}{\omega^2_c\tau^2} = \frac{k_{\text{B}}T}{m\nu}\frac{\nu^2}{\omega_c^2} = \frac{k_{\text{B}}T\nu}{m\omega_c^2}
+\end{equation}
+となる。磁場に平行な方向の拡散係数は、衝突周波数の$-1$乗に比例しているが、磁場に垂直な方向の拡散係数は衝突周波数に比例することがわかる。これは、衝突によって垂直方向に拡散していくことから理解できる。
+さらに、質量の依存性も逆転している。ラーモア半径$r_L = v/\omega_c = mv/qB$と、{\color{red}$\nu\propto{}m^{-1/2}$であることに注意すると（これわからない）、}
+\begin{equation}
+	D = \frac{k_{\text{B}}T}{m\nu} \approx \frac{v^2_{\text{th}}}{\nu} = \frac{\lambda_m^2\nu^2}{\nu} = \frac{\lambda^2_m}{\tau},
+	\quad{}D_{\perp} = \frac{k_{\text{B}}T\nu}{m\omega^2_c} \approx v^2_{\text{th}}\frac{r_L^2}{v_{\text{th}}^2}\nu = \frac{r_L^2}{\tau}
+\end{equation}
+であるため、
+\begin{equation}
+	D\propto m^{-1/2},\quad{}D_{\perp}\propto{}m^{3/2}
+\end{equation}
+となる。つまり、磁場に平行な方向への拡散は熱運動によって電子が素早く拡散しようとし、磁場に垂直方向はイオンがサイクロトロン運動によって素早く拡散する。
+プラズマ全体で両極性拡散となればいいため、磁場に垂直な方向でだけ両極性拡散を呈する必要はない。
+
+
+
+
+\end{document}
